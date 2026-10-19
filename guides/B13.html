@@ -87,4 +87,75 @@ main,section,article,aside,fieldset,.planner-grid>*,.section-top>*,.date-row>*{m
 @media(max-width:900px){.villa-catalog{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.villa-catalog{grid-template-columns:1fr;gap:16px}.villa-card-body{padding:16px}.villa-card-body h3{font-size:20px}.villa-price strong{font-size:21px}.villa-request{font-size:14px}}
 .villa-card-visual.has-photo:after{display:none}
+
+/* Claude 2026-10-20 polish: 가독성·신뢰감 (실제 사진, 시즌 요금 카드, 대비) — 지우면 이전 디자인으로 돌아감 */
+:root{--muted:#5f6c63}
+body{font-size:16px;letter-spacing:-.01em}
+.section-description,.catalog-intro p{color:#4f5c53;font-size:15px}
+.eyebrow{letter-spacing:2.2px}
+
+/* hero */
+.hero-shade{background:linear-gradient(90deg,#0b1f1bd9 0%,#0f2a2499 38%,#10282026 70%,#0000 100%),linear-gradient(0deg,#0b1f1b99,transparent 55%)}
+.hero h1{text-shadow:0 2px 24px #0006}
+.hero-description{font-size:17px;color:#ffffffe6}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero-ghost{background:#ffffff1f;color:#fff;border:1px solid #ffffff66;backdrop-filter:blur(6px)}
+.hero-ghost:hover{background:#ffffff33}
+.hero-image-credit{opacity:.75}
+.hero-picks{position:absolute;right:5%;bottom:48px;width:330px;background:#fffffff2;color:var(--forest);border-radius:14px;padding:18px 18px 14px;box-shadow:0 18px 50px #0b1f1b40;backdrop-filter:blur(14px);text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .2s ease,box-shadow .2s ease}
+.hero-picks:hover{transform:translateY(-3px);box-shadow:0 24px 60px #0b1f1b55}
+.hero-picks-head{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1.4px;font-weight:600;color:#4d6a52}
+.hero-picks-head .pill{letter-spacing:0;font-size:11px}
+.hero-pick{display:flex;align-items:center;gap:12px}
+.hero-pick img{width:56px;height:44px;object-fit:cover;border-radius:8px;flex:none}
+.hero-pick>span{display:flex;flex-direction:column;line-height:1.3}
+.hero-pick b{font-size:15px;font-weight:650}
+.hero-pick small{font-size:13px;color:#4f5c53}
+.hero-picks-foot{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;font-size:13px;font-weight:600}
+
+/* promise strip */
+.promise-strip{padding:30px 0}
+.promise-strip>div{align-items:flex-start;gap:16px;padding:0 24px;justify-content:flex-start}
+.promise-strip>div>span{font:italic 22px/1 Georgia,serif;color:#8aa07f}
+.promise-strip p{margin:0;font-size:14px;color:#56635a;line-height:1.55}
+.promise-strip p strong{display:block;font-size:17px;color:var(--forest);font-weight:700;margin:0 0 3px}
+
+/* cards feel */
+.villa-card,.course-card,.journal-card,.support-card,.transport-card{border-radius:14px;transition:transform .2s ease,box-shadow .2s ease}
+.villa-card:hover,.journal-card:hover,.support-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px #193e3414}
+.villa-card-visual.has-photo img{transition:transform .5s ease}.villa-card:hover .villa-card-visual img{transform:scale(1.04)}
+.villa-card-visual{border-radius:0}
+.course-card{background:#fff}
+.button{border-radius:10px}
+
+/* footer */
+footer{background:var(--forest);color:#e7efe3}
+footer .brand,footer .brand small{color:#fff}
+footer p{color:#c9d6c6}
+.footer-top{display:grid;grid-template-columns:1.2fr 2fr auto;gap:28px;align-items:center}
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer-nav a{color:#e7efe3;text-decoration:none;font-size:14px}
+.footer-nav a:hover{color:var(--lime)}
+.footer-bottom{border-top-color:#ffffff26!important;color:#b8c7b5}
+.footer-bottom span{color:#b8c7b5}
+
+@media(max-width:900px){
+ .hero-picks{display:none}
+ .promise-strip>div{padding:0}
+ .footer-top{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:600px){
+ .hero-actions .button{width:100%;justify-content:space-between}
+ .hero-actions .hero-ghost{justify-content:center}
+ .hero-description{font-size:15px}
+ .promise-strip{padding:22px 5%;gap:16px}
+ .promise-strip p{font-size:13px}.promise-strip p strong{font-size:16px;margin:0 0 2px}
+ .promise-strip>div>span{font-size:18px}
+ .footer-cta{width:100%;justify-content:space-between}
+}
+@media(max-width:600px){
+ .hero-shade{background:linear-gradient(180deg,#0b1f1bd6 0%,#0b1f1bb3 50%,#0b1f1b66 80%,#0b1f1b40 100%)}
+ .hero{max-height:610px;min-height:560px}
+ .hero-image{background-position:30% center}
+}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">단체여행 총무 · B13</p><h1>총무가 덜 설명해도 되는 공유 견적</h1><p>팀 총액, 개인별 선택, 객실 배정을 같은 기준으로 정리하면 일행과의 의사결정이 쉬워집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">첫 화면은 여행 조건과 총액</h2><p>여행 날짜, 전체 인원, 객실 구성, 골프 참여 인원과 작성일을 먼저 적으세요. 그 아래에 예약대금, 현지 별도 비용과 아직 확인하지 못한 항목을 나눠 표시합니다. 포함 범위를 읽을 수 있어야 일행도 단순한 1인 가격보다 무엇에 돈을 쓰는지 이해하기 쉽습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">공동비와 개인 선택을 나누기</h2><p>숙소나 공동 차량은 일행이 합의한 기준으로 나누고, 개인 골프나 추가 서비스는 이용자에게 배정하세요. 일부만 골프를 친다면 그 비용을 전원에게 같은 비율로 나누기 전에 합의가 필요합니다. 독실이나 숙박 기간 차이가 있을 때도 개인 추가분을 따로 적으면 정산이 편합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">객실 배정은 확인 상태까지</h2><p>방별 이용자와 침대 구성을 함께 적고, 일행 협의 중인 배정과 숙소에서 확인한 구성을 구분하세요. 정원에 맞아도 잠자리 방식이 다를 수 있습니다. 넓게 공유하는 문서에는 불필요한 연락처나 계좌번호를 빼고, 이름 대신 별칭을 사용해도 충분합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">바뀐 조건은 같은 문서에 남기기</h2><p>인원이나 날짜, 골프 일정이 바뀌면 변경일과 이유를 남기세요. 받은 돈, 여행사에 전달한 돈과 남은 납부액도 구분해 기록합니다. 견적 공유는 예약 확정과 다르므로 최종 조건과 결제 안내를 확인한 뒤 일행에게 알려주세요. 최신본의 제목과 작성일도 맞춰두면 좋습니다.</p><a class="button button-dark" href="../index.html#inquiry=B13">이 글의 조건으로 여행 문의하기 ↗</a></article><a class="guide-back" href="../index.html#plan=B13">총무용 공유 견적 만들기 ↗</a></main></body></html>

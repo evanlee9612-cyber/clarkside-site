@@ -87,4 +87,75 @@ main,section,article,aside,fieldset,.planner-grid>*,.section-top>*,.date-row>*{m
 @media(max-width:900px){.villa-catalog{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.villa-catalog{grid-template-columns:1fr;gap:16px}.villa-card-body{padding:16px}.villa-card-body h3{font-size:20px}.villa-price strong{font-size:21px}.villa-request{font-size:14px}}
 .villa-card-visual.has-photo:after{display:none}
+
+/* Claude 2026-10-20 polish: 가독성·신뢰감 (실제 사진, 시즌 요금 카드, 대비) — 지우면 이전 디자인으로 돌아감 */
+:root{--muted:#5f6c63}
+body{font-size:16px;letter-spacing:-.01em}
+.section-description,.catalog-intro p{color:#4f5c53;font-size:15px}
+.eyebrow{letter-spacing:2.2px}
+
+/* hero */
+.hero-shade{background:linear-gradient(90deg,#0b1f1bd9 0%,#0f2a2499 38%,#10282026 70%,#0000 100%),linear-gradient(0deg,#0b1f1b99,transparent 55%)}
+.hero h1{text-shadow:0 2px 24px #0006}
+.hero-description{font-size:17px;color:#ffffffe6}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero-ghost{background:#ffffff1f;color:#fff;border:1px solid #ffffff66;backdrop-filter:blur(6px)}
+.hero-ghost:hover{background:#ffffff33}
+.hero-image-credit{opacity:.75}
+.hero-picks{position:absolute;right:5%;bottom:48px;width:330px;background:#fffffff2;color:var(--forest);border-radius:14px;padding:18px 18px 14px;box-shadow:0 18px 50px #0b1f1b40;backdrop-filter:blur(14px);text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .2s ease,box-shadow .2s ease}
+.hero-picks:hover{transform:translateY(-3px);box-shadow:0 24px 60px #0b1f1b55}
+.hero-picks-head{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1.4px;font-weight:600;color:#4d6a52}
+.hero-picks-head .pill{letter-spacing:0;font-size:11px}
+.hero-pick{display:flex;align-items:center;gap:12px}
+.hero-pick img{width:56px;height:44px;object-fit:cover;border-radius:8px;flex:none}
+.hero-pick>span{display:flex;flex-direction:column;line-height:1.3}
+.hero-pick b{font-size:15px;font-weight:650}
+.hero-pick small{font-size:13px;color:#4f5c53}
+.hero-picks-foot{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;font-size:13px;font-weight:600}
+
+/* promise strip */
+.promise-strip{padding:30px 0}
+.promise-strip>div{align-items:flex-start;gap:16px;padding:0 24px;justify-content:flex-start}
+.promise-strip>div>span{font:italic 22px/1 Georgia,serif;color:#8aa07f}
+.promise-strip p{margin:0;font-size:14px;color:#56635a;line-height:1.55}
+.promise-strip p strong{display:block;font-size:17px;color:var(--forest);font-weight:700;margin:0 0 3px}
+
+/* cards feel */
+.villa-card,.course-card,.journal-card,.support-card,.transport-card{border-radius:14px;transition:transform .2s ease,box-shadow .2s ease}
+.villa-card:hover,.journal-card:hover,.support-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px #193e3414}
+.villa-card-visual.has-photo img{transition:transform .5s ease}.villa-card:hover .villa-card-visual img{transform:scale(1.04)}
+.villa-card-visual{border-radius:0}
+.course-card{background:#fff}
+.button{border-radius:10px}
+
+/* footer */
+footer{background:var(--forest);color:#e7efe3}
+footer .brand,footer .brand small{color:#fff}
+footer p{color:#c9d6c6}
+.footer-top{display:grid;grid-template-columns:1.2fr 2fr auto;gap:28px;align-items:center}
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer-nav a{color:#e7efe3;text-decoration:none;font-size:14px}
+.footer-nav a:hover{color:var(--lime)}
+.footer-bottom{border-top-color:#ffffff26!important;color:#b8c7b5}
+.footer-bottom span{color:#b8c7b5}
+
+@media(max-width:900px){
+ .hero-picks{display:none}
+ .promise-strip>div{padding:0}
+ .footer-top{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:600px){
+ .hero-actions .button{width:100%;justify-content:space-between}
+ .hero-actions .hero-ghost{justify-content:center}
+ .hero-description{font-size:15px}
+ .promise-strip{padding:22px 5%;gap:16px}
+ .promise-strip p{font-size:13px}.promise-strip p strong{font-size:16px;margin:0 0 2px}
+ .promise-strip>div>span{font-size:18px}
+ .footer-cta{width:100%;justify-content:space-between}
+}
+@media(max-width:600px){
+ .hero-shade{background:linear-gradient(180deg,#0b1f1bd6 0%,#0b1f1bb3 50%,#0b1f1b66 80%,#0b1f1b40 100%)}
+ .hero{max-height:610px;min-height:560px}
+ .hero-image{background-position:30% center}
+}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">여행 예산 · B01</p><h1>견적의 첫 줄보다, 마지막 총액을 보세요</h1><p>예약대금·현지 별도 비용·선택 지출을 나누면 여러 견적을 같은 조건으로 비교할 수 있습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">비교 조건부터 한 줄로 맞추기</h2><p>여행 날짜, 인원, 숙박 수, 객실 구성, 골프 횟수와 차량 구간을 먼저 정하세요. 같은 숙소여도 객실 유형이나 식사 조건이 다르면 같은 견적이 아닙니다. 항공권 포함 여부와 도착 현지 시간까지 맞춰야 실제로 필요한 비용을 비교할 수 있습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">비용은 세 칸으로 나누기</h2><p>예약할 때 결제하는 돈, 일정에 필요하지만 현지에서 따로 내는 돈, 원하는 사람만 쓰는 선택 지출을 구분하세요. 금액을 아직 받지 못한 항목은 0원이 아니라 미확인으로 남깁니다. 현지 결제라고 적혀 있다면 누구에게 무엇을 어떤 기준으로 내는지 확인하세요.</p><h2 style="font-size:19px;margin:30px 0 12px">팀 총액과 1인 부담액 함께 보기</h2><p>같은 통화끼리 합산하고, 환산할 때는 적용 환율과 계산 날짜를 남기세요. 숙소와 공동 차량은 합의한 기준으로 나누고 독실이나 개인 일정은 따로 표시합니다. 모두에게 같은 금액을 나누기 전에 누가 어떤 서비스를 이용하는지 먼저 확인하면 정산이 편해집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">결제 전에 빈칸 닫기</h2><p>세금·수수료, 추가 인원, 차량 초과 운행, 변경·취소 조건과 견적 유효기간을 확인하세요. 보증금은 실제 비용과 구분해 적습니다. 비교할 견적이 있다면 개인정보를 가린 뒤 여행 조건과 함께 보내주세요. 빠진 항목과 서로 다른 조건부터 정리할 수 있습니다.</p><a class="button button-dark" href="../index.html#inquiry=B01">이 글의 조건으로 여행 문의하기 ↗</a></article><a class="guide-back" href="../index.html#plan=B01">같은 조건으로 총비용 비교하기 ↗</a></main></body></html>
