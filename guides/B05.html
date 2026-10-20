@@ -161,4 +161,92 @@ footer p{color:#c9d6c6}
 /* 현지 지원 카드 4개: 넓은 화면 4열, 중간 2열 */
 @media(min-width:1101px){.support-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(min-width:601px) and (max-width:1100px){.support-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Claude 2026-10-20: 카카오 상담 카드 — 50~60대 손님 기준: 큰 글씨·큰 버튼·단계 최소화 */
+.legacy{display:none!important}
+.consult-section{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.consult-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:56px;align-items:start}
+.consult-head{position:sticky;top:110px}
+.consult-head h2{margin:10px 0 18px}
+.consult-lead{font-size:17px;line-height:1.7;color:#44514a;margin:0 0 28px}
+.consult-promise{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.consult-promise li{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;color:var(--forest)}
+.consult-promise b{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;color:#6d8a63}
+.consult-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 34px 28px;box-shadow:0 24px 60px #193e3412}
+.c-step{border:0;margin:0 0 30px;padding:0;min-width:0}
+.c-step legend{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:var(--forest);margin-bottom:16px;padding:0}
+.c-step legend small{font-size:14px;font-weight:500;color:var(--muted)}
+.c-num{width:30px;height:30px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font-size:15px;flex:none}
+.c-chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.c-chip{position:relative;cursor:pointer}
+.c-chip input{position:absolute;opacity:0;pointer-events:none}
+.c-chip span{display:flex;align-items:center;justify-content:center;gap:6px;min-height:58px;border:1.5px solid #d5ddd2;border-radius:14px;background:#fff;font-size:17px;font-weight:600;color:#2c3d35;transition:all .15s ease;text-align:center;padding:6px}
+.c-chip:hover span{border-color:#9db394}
+.c-chip input:checked+span{background:var(--forest);border-color:var(--forest);color:#fff}
+.c-chip input:checked+span:before{content:"✓";font-size:15px;color:var(--lime)}
+.c-chip input:focus-visible+span{outline:3px solid #9db394;outline-offset:2px}
+.c-error{margin:10px 0 0;font-size:15px;font-weight:600;color:#b4432f}
+.c-villa{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding:12px 16px;border-radius:12px;background:#f1f6e4;font-size:16px;color:var(--forest)}
+.c-villa strong{margin-left:6px}
+.c-villa button{border:0;background:none;color:#6d7a70;font-size:14px;text-decoration:underline;cursor:pointer;min-height:40px}
+.c-trip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.c-person{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.c-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.c-field>span{font-size:15px;font-weight:600;color:#3b4a42}
+.c-field em{font-style:normal;font-weight:500;color:var(--muted);font-size:13px;margin-left:4px}
+.c-field small{font-size:13px;color:var(--muted)}
+.c-field input,.c-field textarea{font:inherit;font-size:17px;color:var(--ink);border:1.5px solid #d5ddd2;border-radius:12px;padding:0 14px;min-height:56px;background:#fff;width:100%;box-sizing:border-box}
+.c-field textarea{padding:14px;min-height:76px;resize:vertical;line-height:1.5}
+.c-field input:focus,.c-field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px #193e341f}
+.c-notes{margin-top:12px}
+.c-stepper{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;border:1.5px solid #d5ddd2;border-radius:12px;min-height:56px;overflow:hidden;background:#fff}
+.c-stepper button{border:0;background:#f4f6f1;font-size:24px;color:var(--forest);height:100%;min-height:53px;cursor:pointer}
+.c-stepper button:active{background:#e4eadf}
+.c-stepper output{text-align:center;font-size:18px;font-weight:700;color:var(--forest)}
+.c-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.kakao-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:64px;border:0;border-radius:14px;background:#FEE500;color:#191919;font:inherit;font-size:19px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px #fee50040;transition:transform .15s ease,box-shadow .15s ease}
+.kakao-button:hover{transform:translateY(-1px);box-shadow:0 12px 26px #e6cf0040}
+.kakao-button svg{width:24px;height:24px;fill:#191919}
+.consult-assure{text-align:center;font-size:14px;color:var(--muted);margin:12px 0 18px}
+.consult-alt{display:flex;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+.c-share,.c-call{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:1.5px solid #d5ddd2;border-radius:12px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--forest);cursor:pointer;text-decoration:none}
+.c-share:hover,.c-call:hover{border-color:var(--forest)}
+.c-share svg,.c-call svg,.m-share svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c-call[hidden]{display:none}
+.c-toast{position:fixed;left:50%;bottom:100px;transform:translate(-50%,20px);background:#1d2b25;color:#fff;padding:14px 22px;border-radius:999px;font-size:16px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:200;max-width:calc(100vw - 32px);text-align:center}
+.c-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.consult-done{position:fixed;inset:0;background:#0b1f1b8c;backdrop-filter:blur(4px);display:grid;place-items:center;z-index:300;padding:16px}
+.consult-done[hidden]{display:none}
+.consult-done-card{background:#fff;border-radius:24px;padding:36px 30px 24px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px #0006;animation:cpop .25s ease}
+@keyframes cpop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.consult-check{width:64px;height:64px;border-radius:50%;background:#e6f2d0;display:grid;place-items:center;margin:0 auto 18px}
+.consult-check svg{width:34px;height:34px;fill:none;stroke:var(--forest);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.consult-done-card h3{font-size:24px;margin:0 0 8px;color:var(--forest)}
+.consult-id{font-size:16px;color:var(--muted);margin:0 0 16px}
+.consult-id strong{color:var(--forest);font-size:18px;letter-spacing:.5px}
+.consult-next{font-size:16px;line-height:1.7;color:#3b4a42;margin:0 0 22px}
+.consult-preview-note{background:#fff6dc;color:#7a5b00;border-radius:10px;padding:10px 12px;font-size:13px;margin:0 0 16px;line-height:1.5}
+.consult-close{margin-top:10px;width:100%;min-height:50px;border:0;background:none;font:inherit;font-size:16px;color:var(--muted);cursor:pointer}
+body.consult-locked{overflow:hidden}
+.header-kakao{background:#FEE500!important;color:#191919!important;border-color:#FEE500!important;font-weight:700}
+.mobile-cost-bar{display:none}
+@media(max-width:1100px){.consult-inner{grid-template-columns:1fr;gap:28px}.consult-head{position:static}.consult-promise{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px}}
+@media(max-width:900px){
+ .mobile-cost-bar{display:flex!important;position:fixed;left:0;right:0;bottom:0;z-index:90;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fffffff2;backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+ .m-share{flex:0 0 96px;display:flex;align-items:center;justify-content:center;gap:6px;min-height:54px;border:1.5px solid #d5ddd2;border-radius:14px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--forest)}
+ .m-kakao{flex:1;min-height:54px;font-size:18px}
+}
+@media(max-width:600px){
+ .consult-card{padding:24px 18px 20px;border-radius:18px}
+ .consult-lead{font-size:16px}
+ .consult-promise{grid-template-columns:1fr;gap:10px}
+ .c-step legend{font-size:19px}
+ .c-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .c-trip{grid-template-columns:1fr 1fr}.c-date{grid-column:1/-1}
+ .c-person{grid-template-columns:1fr}
+ .consult-alt{flex-direction:column}
+}
+.c-toast{top:96px;bottom:auto;transform:translate(-50%,-12px)}
+#consult-form{scroll-margin-top:96px}
+@media(max-width:600px){.consult-promise{display:none}.consult-lead{margin-bottom:6px}#consult-form{scroll-margin-top:84px}}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">골프 준비 · B05</p><h1>골프 견적, 그린피 다음에 볼 것들</h1><p>카트·캐디·이동·장비의 포함 범위를 확인하면 현지에서 필요한 예산이 또렷해집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">라운드 조건부터 나란히 놓기</h2><p>골프장, 희망 날짜, 인원, 홀 수와 시간대를 같은 기준으로 맞추세요. 골프 2회라는 문장만으로는 라운드 조건을 비교하기 어렵습니다. 원하는 시간과 확정된 티타임도 구분하고, 특정 골프장이 우선이라면 바꿀 수 있는 날짜나 시간 범위도 함께 정해두세요.</p><h2 style="font-size:19px;margin:30px 0 12px">포함·별도·미확인 표시하기</h2><p>카트와 캐디의 포함 여부뿐 아니라 이용 기준과 배정 방식까지 확인하세요. 팁도 인터넷에서 본 금액을 모든 골프장의 고정 비용으로 넣지 말고 해당 예약의 안내를 받아야 합니다. 항목마다 포함, 별도, 해당 없음, 미확인으로 표시하면 빠진 비용을 찾기 쉽습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">이동과 장비까지 범위 맞추기</h2><p>숙소와 골프장 사이 왕복 차량이 들어 있는지, 식사나 다른 장소 경유도 가능한지 확인하세요. 장비를 빌릴 계획이라면 필요한 규격과 대여 가능 여부, 비용과 보증 조건을 물어보면 좋습니다. 락커나 연습 시설, 식음료도 이용할 계획이 있으면 비교 항목에 넣으세요.</p><h2 style="font-size:19px;margin:30px 0 12px">날씨와 일정 변경 조건 받기</h2><p>세금·예약 수수료, 취소·변경과 우천 시 처리 조건까지 확인해야 비교가 끝납니다. 환불이나 일정 변경이 된다고 미리 가정하지 마세요. 문의에는 여행 날짜, 인원, 희망 횟수와 시간대, 장비 필요 여부를 적고, 대체 골프장도 괜찮은지 함께 알려주세요.</p><a class="button button-dark" href="../index.html#inquiry=B05">이 글의 조건으로 여행 문의하기 ↗</a></article><a class="guide-back" href="../index.html#plan=B05">골프 포함 총비용 살펴보기 ↗</a></main></body></html>

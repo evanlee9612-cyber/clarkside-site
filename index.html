@@ -168,19 +168,107 @@ footer p{color:#c9d6c6}
 /* 현지 지원 카드 4개: 넓은 화면 4열, 중간 2열 */
 @media(min-width:1101px){.support-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(min-width:601px) and (max-width:1100px){.support-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Claude 2026-10-20: 카카오 상담 카드 — 50~60대 손님 기준: 큰 글씨·큰 버튼·단계 최소화 */
+.legacy{display:none!important}
+.consult-section{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.consult-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:56px;align-items:start}
+.consult-head{position:sticky;top:110px}
+.consult-head h2{margin:10px 0 18px}
+.consult-lead{font-size:17px;line-height:1.7;color:#44514a;margin:0 0 28px}
+.consult-promise{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.consult-promise li{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;color:var(--forest)}
+.consult-promise b{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;color:#6d8a63}
+.consult-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 34px 28px;box-shadow:0 24px 60px #193e3412}
+.c-step{border:0;margin:0 0 30px;padding:0;min-width:0}
+.c-step legend{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:var(--forest);margin-bottom:16px;padding:0}
+.c-step legend small{font-size:14px;font-weight:500;color:var(--muted)}
+.c-num{width:30px;height:30px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font-size:15px;flex:none}
+.c-chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.c-chip{position:relative;cursor:pointer}
+.c-chip input{position:absolute;opacity:0;pointer-events:none}
+.c-chip span{display:flex;align-items:center;justify-content:center;gap:6px;min-height:58px;border:1.5px solid #d5ddd2;border-radius:14px;background:#fff;font-size:17px;font-weight:600;color:#2c3d35;transition:all .15s ease;text-align:center;padding:6px}
+.c-chip:hover span{border-color:#9db394}
+.c-chip input:checked+span{background:var(--forest);border-color:var(--forest);color:#fff}
+.c-chip input:checked+span:before{content:"✓";font-size:15px;color:var(--lime)}
+.c-chip input:focus-visible+span{outline:3px solid #9db394;outline-offset:2px}
+.c-error{margin:10px 0 0;font-size:15px;font-weight:600;color:#b4432f}
+.c-villa{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding:12px 16px;border-radius:12px;background:#f1f6e4;font-size:16px;color:var(--forest)}
+.c-villa strong{margin-left:6px}
+.c-villa button{border:0;background:none;color:#6d7a70;font-size:14px;text-decoration:underline;cursor:pointer;min-height:40px}
+.c-trip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.c-person{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.c-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.c-field>span{font-size:15px;font-weight:600;color:#3b4a42}
+.c-field em{font-style:normal;font-weight:500;color:var(--muted);font-size:13px;margin-left:4px}
+.c-field small{font-size:13px;color:var(--muted)}
+.c-field input,.c-field textarea{font:inherit;font-size:17px;color:var(--ink);border:1.5px solid #d5ddd2;border-radius:12px;padding:0 14px;min-height:56px;background:#fff;width:100%;box-sizing:border-box}
+.c-field textarea{padding:14px;min-height:76px;resize:vertical;line-height:1.5}
+.c-field input:focus,.c-field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px #193e341f}
+.c-notes{margin-top:12px}
+.c-stepper{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;border:1.5px solid #d5ddd2;border-radius:12px;min-height:56px;overflow:hidden;background:#fff}
+.c-stepper button{border:0;background:#f4f6f1;font-size:24px;color:var(--forest);height:100%;min-height:53px;cursor:pointer}
+.c-stepper button:active{background:#e4eadf}
+.c-stepper output{text-align:center;font-size:18px;font-weight:700;color:var(--forest)}
+.c-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.kakao-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:64px;border:0;border-radius:14px;background:#FEE500;color:#191919;font:inherit;font-size:19px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px #fee50040;transition:transform .15s ease,box-shadow .15s ease}
+.kakao-button:hover{transform:translateY(-1px);box-shadow:0 12px 26px #e6cf0040}
+.kakao-button svg{width:24px;height:24px;fill:#191919}
+.consult-assure{text-align:center;font-size:14px;color:var(--muted);margin:12px 0 18px}
+.consult-alt{display:flex;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+.c-share,.c-call{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:1.5px solid #d5ddd2;border-radius:12px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--forest);cursor:pointer;text-decoration:none}
+.c-share:hover,.c-call:hover{border-color:var(--forest)}
+.c-share svg,.c-call svg,.m-share svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c-call[hidden]{display:none}
+.c-toast{position:fixed;left:50%;bottom:100px;transform:translate(-50%,20px);background:#1d2b25;color:#fff;padding:14px 22px;border-radius:999px;font-size:16px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:200;max-width:calc(100vw - 32px);text-align:center}
+.c-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.consult-done{position:fixed;inset:0;background:#0b1f1b8c;backdrop-filter:blur(4px);display:grid;place-items:center;z-index:300;padding:16px}
+.consult-done[hidden]{display:none}
+.consult-done-card{background:#fff;border-radius:24px;padding:36px 30px 24px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px #0006;animation:cpop .25s ease}
+@keyframes cpop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.consult-check{width:64px;height:64px;border-radius:50%;background:#e6f2d0;display:grid;place-items:center;margin:0 auto 18px}
+.consult-check svg{width:34px;height:34px;fill:none;stroke:var(--forest);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.consult-done-card h3{font-size:24px;margin:0 0 8px;color:var(--forest)}
+.consult-id{font-size:16px;color:var(--muted);margin:0 0 16px}
+.consult-id strong{color:var(--forest);font-size:18px;letter-spacing:.5px}
+.consult-next{font-size:16px;line-height:1.7;color:#3b4a42;margin:0 0 22px}
+.consult-preview-note{background:#fff6dc;color:#7a5b00;border-radius:10px;padding:10px 12px;font-size:13px;margin:0 0 16px;line-height:1.5}
+.consult-close{margin-top:10px;width:100%;min-height:50px;border:0;background:none;font:inherit;font-size:16px;color:var(--muted);cursor:pointer}
+body.consult-locked{overflow:hidden}
+.header-kakao{background:#FEE500!important;color:#191919!important;border-color:#FEE500!important;font-weight:700}
+.mobile-cost-bar{display:none}
+@media(max-width:1100px){.consult-inner{grid-template-columns:1fr;gap:28px}.consult-head{position:static}.consult-promise{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px}}
+@media(max-width:900px){
+ .mobile-cost-bar{display:flex!important;position:fixed;left:0;right:0;bottom:0;z-index:90;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fffffff2;backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+ .m-share{flex:0 0 96px;display:flex;align-items:center;justify-content:center;gap:6px;min-height:54px;border:1.5px solid #d5ddd2;border-radius:14px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--forest)}
+ .m-kakao{flex:1;min-height:54px;font-size:18px}
+}
+@media(max-width:600px){
+ .consult-card{padding:24px 18px 20px;border-radius:18px}
+ .consult-lead{font-size:16px}
+ .consult-promise{grid-template-columns:1fr;gap:10px}
+ .c-step legend{font-size:19px}
+ .c-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .c-trip{grid-template-columns:1fr 1fr}.c-date{grid-column:1/-1}
+ .c-person{grid-template-columns:1fr}
+ .consult-alt{flex-direction:column}
+}
+.c-toast{top:96px;bottom:auto;transform:translate(-50%,-12px)}
+#consult-form{scroll-margin-top:96px}
+@media(max-width:600px){.consult-promise{display:none}.consult-lead{margin-bottom:6px}#consult-form{scroll-margin-top:84px}}
 </style>
 </head>
 <body>
 <div class="concept-bar"><span class="little-dot"></span><span>여행 계획부터 현지 상담까지</span><span class="concept-divider">|</span><span class="concept-detail">숙소·골프·차량 · <span data-contact-owner>원석</span> 담당 상담</span></div>
 <header class="site-header">
  <a class="brand" href="#home" aria-label="처음으로"><svg viewBox="0 0 32 36" aria-hidden="true"><path d="M16 34S3 20 3 13a13 13 0 0 1 26 0c0 7-13 21-13 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 22V7l9 4-9 4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 23h12" stroke="currentColor"/></svg><span><span data-brand-english>CLARKSIDE</span><small>TRAVEL & LOCAL EXPERIENCES</small></span></a>
- <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="전체 메뉴 열기">메뉴 <span>☰</span></button><nav id="main-nav" aria-label="주요 메뉴"><a data-menu-link href="#villas">풀빌라</a><a data-menu-link href="#golf">골프장</a><a data-menu-link href="#service-transfer">차량·공항</a><a data-menu-link href="#planner">여행 문의</a><a data-menu-link href="#journal">블로그·가이드</a><a data-menu-link href="#exchange">현지 지원</a></nav>
- <a class="button button-dark header-cta" href="#inquiry">원석 담당 문의 <span>↗</span></a>
+ <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="전체 메뉴 열기">메뉴 <span>☰</span></button><nav id="main-nav" aria-label="주요 메뉴"><a data-menu-link href="#villas">풀빌라</a><a data-menu-link href="#golf">골프장</a><a data-menu-link href="#service-transfer">차량·공항</a><a data-menu-link href="#consult">카톡 상담</a><a data-menu-link href="#journal">블로그·가이드</a><a data-menu-link href="#exchange">현지 지원</a></nav>
+ <a class="button header-cta header-kakao" href="#consult">카톡 상담 <span>↗</span></a>
 </header>
 <main id="home">
  <section class="hero" aria-labelledby="hero-title">
   <div class="hero-image"></div><div class="hero-shade"></div>
-  <div class="hero-copy"><p class="eyebrow light">CLARK, AT YOUR OWN PACE</p><h1 id="hero-title">함께 가는 여행,<br>준비는 가볍게.</h1><p class="hero-description">풀빌라, 골프, 차량, 공항 VIP까지.<br>필요한 것만 골라 현지 담당자와 준비하세요.</p><div class="hero-actions"><a class="button button-lime" href="#planner">필요한 서비스 골라 문의하기 <span>↗</span></a><a class="button hero-ghost" href="#villas">풀빌라 요금 보기</a></div><p class="hero-caption">PHILIPPINES · CLARK & ANGELES</p></div>
+  <div class="hero-copy"><p class="eyebrow light">CLARK, AT YOUR OWN PACE</p><h1 id="hero-title">함께 가는 여행,<br>준비는 가볍게.</h1><p class="hero-description">풀빌라, 골프, 차량, 공항 VIP까지.<br>필요한 것만 골라 현지 담당자와 준비하세요.</p><div class="hero-actions"><a class="button button-lime" href="#consult">카톡으로 바로 상담하기 <span>↗</span></a><a class="button hero-ghost" href="#villas">풀빌라 요금 보기</a></div><p class="hero-caption">PHILIPPINES · CLARK & ANGELES</p></div>
   <a class="hero-picks" href="#villas" aria-label="이번 시즌 풀빌라 요금 보기"><span class="hero-picks-head"><span>THIS SEASON · 풀빌라</span><span class="pill">2026.11–2027.03</span></span><span class="hero-pick"><img src="assets/villas/coco-1.jpg" alt="" loading="eager"><span><b>코코밸리</b><small>1박 ₱18,000부터</small></span></span><span class="hero-pick"><img src="assets/villas/sh-1.jpg" alt="" loading="eager"><span><b>SH</b><small>1박 ₱12,000부터</small></span></span><span class="hero-pick"><img src="assets/villas/gold-1.jpg" alt="" loading="eager"><span><b>엠타운 골드</b><small>1박 ₱13,000부터</small></span></span><span class="hero-picks-foot">객실별 요금·사진 보기 <span>↗</span></span></a>
   <div class="hero-quote" hidden><div class="hero-quote-head"><span>YOUR TRIP, AT A GLANCE</span><span class="pill">맞춤 여행</span></div><p id="hero-summary">필요한 서비스를 선택해 주세요</p><div class="hero-price"><small>요금 안내</small><strong id="hero-price">조건 확인 후</strong></div><div class="hero-quote-bottom"><span>희망 조건을 정리해 문의하세요</span><a href="#planner" aria-label="여행 조건 선택으로 이동">↗</a></div></div>
   <span class="hero-image-credit">사진: 제휴 풀빌라 실제 사진</span>
@@ -199,7 +287,48 @@ footer p{color:#c9d6c6}
 
 
 
- <section id="planner" class="planner-section"><div class="section planner-inner"><div class="section-top"><div><p class="eyebrow">02 · PLAN & ASK</p><h2>필요한 것만 고르고,<br>한 번에 문의하세요.</h2></div><p class="section-description">골프 없이 숙소만, 차량 없이 골프와 공항 VIP만.<br>우리 일행에게 필요한 서비스를 함께 선택하세요.</p></div>
+ <section id="consult" class="consult-section" aria-labelledby="consult-title"><div class="section consult-inner">
+ <div class="consult-head"><p class="eyebrow">02 · KAKAO CONSULT</p><h2 id="consult-title">고르고, 누르면<br>상담 끝.</h2><p class="consult-lead">필요한 것만 누르고 노란 버튼을 눌러주세요.<br><span data-contact-owner>원석</span> 담당자가 바로 확인하고 카카오톡으로 안내드립니다.</p>
+  <ul class="consult-promise"><li><b>1</b>필요한 것 선택</li><li><b>2</b>날짜·인원 입력</li><li><b>3</b>카카오톡 상담 시작</li></ul>
+ </div>
+ <form id="consult-form" class="consult-card" novalidate autocomplete="on">
+  <fieldset class="c-step"><legend><span class="c-num">1</span>무엇이 필요하세요? <small>여러 개 선택 가능</small></legend>
+   <div class="c-chips" id="consult-services"><label class="c-chip"><input type="checkbox" data-consult-service value="villa"><span>풀빌라</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="golf"><span>골프</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="transfer"><span>차량·픽업</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="airport"><span>공항 VIP</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="exchange"><span>환전</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="documents"><span>서류 대행</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="manpower"><span>인력 연결</span></label><label class="c-chip"><input type="checkbox" data-consult-service value="marketing"><span>마케팅</span></label></div>
+   <p class="c-error" id="consult-services-error" role="alert" hidden>필요한 것을 하나 이상 눌러주세요.</p>
+   <div class="c-villa" id="consult-villa" hidden><span>관심 숙소 <strong id="consult-villa-name"></strong></span><button type="button" id="consult-villa-clear" aria-label="관심 숙소 지우기">지우기</button></div>
+  </fieldset>
+  <fieldset class="c-step" id="consult-trip" hidden><legend><span class="c-num">2</span>언제, 몇 분이세요?</legend>
+   <div class="c-trip">
+    <label class="c-field c-date"><span>도착 날짜</span><input type="date" id="consult-date" min="2026-01-01" max="2028-12-31"><small>모르시면 비워두셔도 됩니다</small></label>
+    <div class="c-field"><span>숙박</span><div class="c-stepper"><button type="button" data-step="nights" data-delta="-1" aria-label="숙박 하루 줄이기">−</button><output id="consult-nights">3박</output><button type="button" data-step="nights" data-delta="1" aria-label="숙박 하루 늘리기">+</button></div></div>
+    <div class="c-field"><span>인원</span><div class="c-stepper"><button type="button" data-step="people" data-delta="-1" aria-label="인원 한 명 줄이기">−</button><output id="consult-people">4명</output><button type="button" data-step="people" data-delta="1" aria-label="인원 한 명 늘리기">+</button></div></div>
+   </div>
+  </fieldset>
+  <fieldset class="c-step"><legend><span class="c-num" id="consult-last-num">2</span>성함을 알려주세요</legend>
+   <div class="c-person">
+    <label class="c-field"><span>성함</span><input type="text" id="consult-name" name="name" autocomplete="name" maxlength="40" placeholder="예: 김철수"></label>
+    <label class="c-field"><span>연락처 <em>선택</em></span><input type="tel" id="consult-contact" name="tel" autocomplete="tel" maxlength="60" placeholder="휴대폰 또는 카톡 ID"></label>
+   </div>
+   <p class="c-error" id="consult-name-error" role="alert" hidden>성함을 입력해 주세요.</p>
+   <label class="c-field c-notes"><span>요청 사항 <em>선택</em></span><textarea id="consult-notes" rows="2" maxlength="800" placeholder="예: 새벽 도착, 골프백 4개, 아이 동반"></textarea></label>
+   <input type="text" id="consult-hp" class="c-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  </fieldset>
+  <button type="submit" class="kakao-button" id="consult-submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6l-1 3.6c-.1.4.3.7.6.5l4.3-2.8c.5.1 1 .1 1.4.1 5.5 0 10-3.5 10-7.8S17.5 3 12 3Z"/></svg>카카오톡으로 상담 시작</button>
+  <p class="consult-assure">누르시면 담당자에게 상담 내용이 바로 전달되고 카카오톡 상담창이 열립니다.</p>
+  <div class="consult-alt"><button type="button" class="c-share" data-kshare><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.8-4M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>일행에게 카톡으로 공유</button><a class="c-call" id="consult-call" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>전화 상담</a></div>
+ </form>
+</div></section>
+<div class="consult-done" id="consult-done" role="dialog" aria-modal="true" aria-labelledby="consult-done-title" hidden><div class="consult-done-card">
+ <div class="consult-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+ <p class="consult-preview-note" id="consult-preview-note" hidden>미리보기 화면 · 카카오 채널과 접수 시트 연결 전이라 실제로 전송되지는 않았어요</p>
+ <h3 id="consult-done-title">상담 신청이 접수됐어요</h3>
+ <p class="consult-id">문의번호 <strong id="consult-id"></strong></p>
+ <p class="consult-next" id="consult-next">카카오톡 상담창에서 <b>붙여넣기</b> 후 <b>전송</b>만 눌러주세요.<br>신청 내용은 이미 복사되어 있어요.</p>
+ <a class="kakao-button" id="consult-open-kakao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6l-1 3.6c-.1.4.3.7.6.5l4.3-2.8c.5.1 1 .1 1.4.1 5.5 0 10-3.5 10-7.8S17.5 3 12 3Z"/></svg>카카오톡 상담창 열기</a>
+ <button type="button" class="consult-close" id="consult-close">닫기</button>
+</div></div>
+
+ <section id="planner" class="planner-section legacy" aria-hidden="true"><div class="section planner-inner"><div class="section-top"><div><p class="eyebrow">02 · PLAN & ASK</p><h2>필요한 것만 고르고,<br>한 번에 문의하세요.</h2></div><p class="section-description">골프 없이 숙소만, 차량 없이 골프와 공항 VIP만.<br>우리 일행에게 필요한 서비스를 함께 선택하세요.</p></div>
   <div id="styles" class="quick-presets"><span>일정이 막막하다면</span><button type="button" data-preset="golf">골프 여행으로 시작 ↗</button><button type="button" data-preset="villa">풀빌라 여행으로 시작 ↗</button><button type="button" data-preset="family">가족 휴식으로 시작 ↗</button></div>
   <div class="planner-grid"><div class="planner-form">
    <fieldset class="request-service-fieldset" aria-describedby="service-help request-service-error"><legend>필요한 서비스 <span>복수 선택</span></legend><p id="service-help">원하는 항목을 모두 선택해 주세요. 선택한 조건만 문의에 담깁니다.</p><div class="request-service-grid">
@@ -216,7 +345,7 @@ footer p{color:#c9d6c6}
    <div class="option-list"><label><span><input type="checkbox" data-option="eveningMeal"><span><strong>함께하는 저녁 식사 1회</strong><small>이용 인원·메뉴 확인 후 안내</small></span></span><b id="meal-option-price">확인 후 안내</b></label><label><span><input type="checkbox" data-option="lateCheckout"><span><strong>귀국일 레이트 체크아웃</strong><small>숙소별 가능 시간·추가요금 확인</small></span></span><b id="late-option-price">확인 후 안내</b></label><label><span><input type="checkbox" data-option="familyActivity"><span><strong>가족 액티비티 1회</strong><small>희망 활동·연령에 맞춰 상담</small></span></span><b id="activity-option-price">확인 후 안내</b></label></div>
    </details>
   </div>
-  <section id="inquiry" class="inquiry-section"><div class="section inquiry-layout compact-inquiry">
+  <section id="inquiry" class="inquiry-section legacy" aria-hidden="true"><div class="section inquiry-layout compact-inquiry">
   <div class="inquiry-card"><div class="inquiry-card-top"><span class="eyebrow">03 · REQUEST & CONTACT</span><a href="#planner" class="text-button">선택 조건 수정 ↗</a></div><h3>선택한 조건으로 원석 담당자에게 문의</h3><p class="inquiry-small">이용 가능 여부와 포함·별도 비용을 확인한 뒤 견적을 안내합니다.</p><div class="request-selects"><label class="field">희망 지역<select id="inquiry-area"><option value="undecided">상담 후 결정</option><option value="clark">클락</option><option value="angeles">앙헬레스</option></select></label></div><p class="inquiry-source" id="inquiry-source">홈페이지에서 선택한 조건</p><div class="inquiry-summary" id="inquiry-summary" aria-live="polite"></div><p id="request-service-error" class="request-error" role="alert" hidden>필요한 서비스를 한 가지 이상 선택해 주세요.</p>
    <div id="villa-preference" class="villa-preference" hidden><span>관심 풀빌라 · <strong id="villa-preference-name"></strong></span><button id="clear-villa-preference" type="button" class="text-button">선택 해제</button></div>
    <label class="inquiry-label" for="inquiry-notes">추가 요청 <span>선택</span></label><textarea id="inquiry-notes" class="inquiry-notes" rows="3" maxlength="1200" placeholder="예: 새벽 도착, 아이 동반, 원하는 풀빌라, 골프백 수"></textarea>
@@ -232,7 +361,7 @@ footer p{color:#c9d6c6}
   </div>
  </div></section>
 
- <section class="section tools-section" aria-labelledby="tools-title">
+ <section class="section tools-section legacy" aria-hidden="true" aria-labelledby="tools-title">
   <details id="planning-tools" class="planning-tools"><summary><span><span class="eyebrow">FOR THE GROUP LEADER</span><strong id="tools-title">총무라면, 준비 도구도 써보세요.</strong><small>총비용 비교 · 객실 배정 · 일행 공유</small></span><span class="tool-expand" aria-hidden="true">+</span></summary>
   <div class="tools-content"><nav class="tool-tabs" aria-label="일행 준비 도구"><a href="#compare">총비용 비교</a><a href="#rooms">객실 배정</a><a href="#together">일행 공유</a></nav>
   <details class="quote-overview"><summary>선택 조건과 견적 확인 항목 <span>+</span></summary>  <aside class="cost-card" aria-label="현재 여행 견적"><div class="cost-card-top"><span class="eyebrow">YOUR TRIP SUMMARY</span><span class="pill">요금 확인 전</span></div><p id="quote-summary">4명 · 호텔 2실 · 3박</p><small class="muted">우리 일행 맞춤 견적</small><strong class="total-price" id="total-price">확인 후 안내</strong><div class="per-person"><span>1인 요금</span><strong id="per-person">확인 후 안내</strong></div><div class="cost-stack" aria-hidden="true"><span id="booking-segment"></span><span id="local-segment"></span><span id="optional-segment"></span></div><dl class="cost-summary"><div><dt><i class="key booking"></i>예약대금</dt><dd id="booking-price">확인 후 안내</dd></div><div><dt><i class="key local"></i>현지 필수비</dt><dd id="local-price">확인 후 안내</dd></div><div><dt><i class="key optional"></i>선택 비용</dt><dd id="optional-price">확인 후 안내</dd></div></dl><details id="cost-details"><summary>항목별 금액 보기 <span>+</span></summary><div id="cost-line-items"></div></details><p class="cost-exclusions">항공권·여행자보험·기본 식비·개인경비는 별도입니다.<br>차량·공항 이동의 구간과 기사·유류·톨 포함 여부는 견적에서 확인합니다.</p><p class="exchange-note">날짜·공급 조건을 확인한 뒤 포함·별도 비용을 안내합니다.</p><button class="button button-dark full" data-share>여행 조건, 일행과 나누기 <span>↗</span></button><button class="text-button request-link" data-inquiry>이 조건으로 원석 담당자에게 문의 ↗</button><a class="subtle-link" href="#compare">받은 견적과 총비용 비교하기 ↓</a></aside></details>
@@ -263,13 +392,13 @@ footer p{color:#c9d6c6}
 
  <section id="faq" class="section last-section"><div><p class="eyebrow">GOOD TO KNOW</p><h2>예약 전, 궁금한 것들.</h2></div><div class="faq-list"><details><summary>화면의 금액으로 바로 예약할 수 있나요?<span>+</span></summary><p>화면은 희망 조건과 객실 배정 초안을 정리하는 도구입니다. 요금은 공급 조건을 확인한 뒤 안내합니다. 선택한 조건으로 문의하면 원석 담당자가 실제 이용일·숙소·티타임·차량을 확인한 뒤 견적과 포함·불포함 범위를 안내합니다.</p></details><details><summary>총비용에는 어떤 범위가 들어가나요?<span>+</span></summary><p>견적을 회신할 때 선택한 서비스별 예약대금과 현지 필수비, 선택 비용을 구분해 안내합니다. 골프 카트·캐디·팁, 차량 유류·톨비 등 포함 여부를 함께 확인하세요. 항공권·여행자보험·기본 식비·개인경비는 별도입니다.</p></details><details><summary>공유 견적은 어떻게 일행에게 보내나요?<span>+</span></summary><p>공유 견적에서 내용을 복사하거나, 현재 조건과 객실 배정이 담긴 견적 파일을 저장할 수 있습니다. 파일로 저장해 일행에게 전달할 수도 있습니다. 예약 접수나 결제는 진행되지 않습니다.</p></details><details><summary>인원을 바꾸면 빌라나 차량도 바뀌나요?<span>+</span></summary><p>일행의 희망 침실 수를 바꿔 배정 초안을 만들 수 있습니다. 실제로 필요한 독채·객실·차량 수는 침대와 적재 공간, 이용일 재고를 확인한 뒤 정합니다.</p></details></div></section>
 </main>
-<footer><div class="footer-top"><a class="brand" href="#home"><span><span data-brand-english>CLARKSIDE</span><small>TRAVEL & LOCAL EXPERIENCES</small></span></a><p>클락 현지에서 함께 만드는, 우리다운 여행.</p><nav class="footer-nav" aria-label="하단 메뉴"><a href="#villas">풀빌라</a><a href="#golf">골프장</a><a href="#service-transfer">차량·공항</a><a href="#journal">여행 가이드</a><a href="#exchange">현지 지원</a><a href="#faq">자주 묻는 질문</a></nav><a class="button button-lime footer-cta" href="#inquiry">여행 문의하기 <span>↗</span></a></div><div class="footer-bottom"><span>CLARK · ANGELES · PHILIPPINES</span><span>표시 요금은 1박 기준이며 날짜별 가능 여부는 상담 후 확인합니다.</span></div></footer>
-<div class="mobile-cost-bar"><span><small>원석 담당 맞춤 상담</small><strong id="mobile-price">확인 후 안내</strong></span><div><button class="button mobile-share" data-share>공유 견적</button><button class="button button-lime" data-inquiry>여행 문의 ↗</button></div></div>
+<footer><div class="footer-top"><a class="brand" href="#home"><span><span data-brand-english>CLARKSIDE</span><small>TRAVEL & LOCAL EXPERIENCES</small></span></a><p>클락 현지에서 함께 만드는, 우리다운 여행.</p><nav class="footer-nav" aria-label="하단 메뉴"><a href="#villas">풀빌라</a><a href="#golf">골프장</a><a href="#service-transfer">차량·공항</a><a href="#journal">여행 가이드</a><a href="#exchange">현지 지원</a><a href="#faq">자주 묻는 질문</a></nav><a class="button button-lime footer-cta" href="#consult">카톡으로 상담하기 <span>↗</span></a></div><div class="footer-bottom"><span>CLARK · ANGELES · PHILIPPINES</span><span>표시 요금은 1박 기준이며 날짜별 가능 여부는 상담 후 확인합니다.</span></div></footer>
+<div class="mobile-cost-bar"><strong id="mobile-price" hidden></strong><button type="button" class="m-share" data-share><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.8-4M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm12 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>공유</button><a class="kakao-button m-kakao" href="#consult"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6l-1 3.6c-.1.4.3.7.6.5l4.3-2.8c.5.1 1 .1 1.4.1 5.5 0 10-3.5 10-7.8S17.5 3 12 3Z"/></svg>카톡 상담</a></div>
 <dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-toolbar"><span><b data-brand-english>CLARKSIDE</b> / TRIP NOTE</span><button class="icon-button" id="close-share" aria-label="공유 견적 닫기">×</button></div><div class="dialog-content"><p class="eyebrow">READY FOR YOUR GROUP</p><h2 id="share-title">일행에게 보여줄 견적이<br>준비됐어요.</h2><p class="dialog-subtitle">현재 희망 조건과 객실 배정 초안을 담았습니다. 실제 요금과 공급 조건은 담당자 확인 후 안내합니다.</p><div id="share-sheet"></div><div class="share-privacy">공유 내용과 파일에는 입력한 여행자 이름이 포함됩니다.</div><div class="share-actions"><button class="button button-dark" id="copy-quote">견적 내용 복사 <span>↗</span></button><button class="button button-outline" id="download-quote">견적 파일 저장 <span>↓</span></button><button class="button button-outline" id="copy-link">견적 링크 복사 <span>↗</span></button><button class="button button-outline" id="print-quote">인쇄 <span>↗</span></button></div><p class="link-note" id="share-link-note"></p><textarea id="copy-fallback" class="copy-fallback" aria-label="복사할 견적 내용" hidden readonly></textarea></div></dialog>
 <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-title"><div class="dialog-toolbar"><span>CLARK TRAVEL JOURNAL</span><button class="icon-button" id="close-guide" aria-label="여행 가이드 닫기">×</button></div><article class="guide-article"><p class="eyebrow" id="guide-tag"></p><h2 id="guide-title"></h2><div id="guide-body"></div><div class="guide-actions"><button class="button button-dark" id="guide-action">우리 여행에 적용하기 ↗</button><button class="button button-outline" id="guide-inquiry">이 내용으로 원석 담당 문의 ↗</button></div></article></dialog>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script>(() => {
-const SITE_CONFIG_RAW = {"brandName":"클락사이드","brandEnglish":"CLARKSIDE","contactOwner":"원석","kakaoUrl":"","email":"","phone":"","naverBlogUrl":"","googleBlogUrl":""};
+const SITE_CONFIG_RAW = {"brandName":"클락사이드","brandEnglish":"CLARKSIDE","contactOwner":"원석","kakaoUrl":"","email":"","phone":"","naverBlogUrl":"","googleBlogUrl":"","inquiryEndpoint":"","kakaoJsKey":""};
 const SITE_CONTENT = {"services":[{"id":"golf","title":"우리 일행에게 맞는 골프 여행","description":"희망 골프장과 라운드 횟수, 숙소와 이동 조건을 함께 정리합니다. 티타임과 포함·별도 비용을 확인한 뒤 안내합니다.","inquiryTopic":"골프장·티타임·라운드 구성 상담","anchor":"service-golf","preset":"golf","photoUrl":"","photoAlt":"실제 골프장 사진 확인 후 등록 예정","fromPricePHP":null,"priceUnit":"","priceVerifiedAt":"","available":false},{"id":"villa","title":"함께 머무는 풀빌라·숙소","description":"일행 구성과 원하는 객실 수에 맞춰 숙소를 확인합니다. 침실·침대 구성, 체크인 시간과 포함 서비스를 견적에 함께 안내합니다.","inquiryTopic":"풀빌라·호텔·객실 구성 상담","anchor":"service-villa","preset":"villa","photoUrl":"","photoAlt":"실제 숙소 사진 확인 후 등록 예정","fromPricePHP":null,"priceUnit":"","priceVerifiedAt":"","available":false},{"id":"transfer","title":"공항부터 일정까지, 차량 이동","description":"도착 항공편과 이동 일정, 인원·짐·골프백 수를 기준으로 차량을 확인합니다. 이용 시간과 유류·통행료·초과 비용을 구분해 안내합니다.","inquiryTopic":"공항 픽업·일정 차량·짐 적재 상담","anchor":"service-transfer","preset":"transfer","photoUrl":"","photoAlt":"실제 이용 차량 사진 확인 후 등록 예정","fromPricePHP":null,"priceUnit":"","priceVerifiedAt":"","available":false},{"id":"airport","title":"공항 VIP·도착 편의 서비스","description":"항공편과 도착 시간을 기준으로 이용 가능한 공항 편의 서비스를 확인합니다. 제공 범위와 이용 조건, 픽업 차량 포함 여부를 따로 안내합니다.","inquiryTopic":"공항 VIP·도착 편의·픽업 연계 상담","anchor":"service-airport","preset":"airport","photoUrl":"","photoAlt":"실제 제공 서비스 사진 확인 후 등록 예정","fromPricePHP":null,"priceUnit":"","priceVerifiedAt":"","available":false}],"connectedBlogs":[]};
 const SITE_CATALOG = {"golf":[{"name":"미모사 (Mimosa)","area":"Clark Freeport","public":true},{"name":"코리아CC (FA Korea)","area":"Clark","public":true},{"name":"썬밸리 · 디하이츠","area":"Clark","public":true},{"name":"더비스타","area":"","public":true},{"name":"한리저브","area":"","public":true},{"name":"베버리","area":"Mexico, Pampanga","public":true},{"name":"프라데라","area":"Lubao, Pampanga","public":true}],"villas":[{"id":"coco-valley","name":"코코밸리","region":"","tier":"조식 포함","public":true,"photoUrl":"assets/villas/coco-1.jpg","photos":["assets/villas/coco-1.jpg","assets/villas/coco-2.jpg","assets/villas/coco-3.jpg","assets/villas/coco-4.jpg","assets/villas/coco-5.jpg"],"photoAlt":"코코밸리","rates":[{"label":"4룸 빌라 · 3룸 사용","php":18000},{"label":"4룸 빌라 · 4룸 사용","php":21000},{"label":"5룸 빌라 · 4룸 사용","php":23000},{"label":"5룸 빌라 · 5룸 사용","php":28000},{"label":"6룸 빌라 · 5룸 사용","php":30000},{"label":"6룸 빌라 · 6룸 사용","php":33000}],"rateNote":"2026.11.01~2027.03.31 성수기 · 1박 · 조식 포함","fromPricePHP":18000},{"id":"xi-villa","name":"자이풀빌라","region":"","tier":"고급","public":false,"photoUrl":"","photos":[],"photoAlt":"자이풀빌라","rates":[],"rateNote":"","fromPricePHP":null},{"id":"sh-villa","name":"SH","region":"앙헬레스","tier":"5룸 빌라","public":true,"photoUrl":"assets/villas/sh-1.jpg","photos":["assets/villas/sh-1.jpg","assets/villas/sh-2.jpg","assets/villas/sh-3.jpg","assets/villas/sh-4.jpg","assets/villas/sh-5.jpg"],"photoAlt":"SH","rates":[{"label":"5룸 빌라 · 3룸 사용","php":12000},{"label":"5룸 빌라 · 4룸 사용","php":16000},{"label":"5룸 빌라 · 5룸 사용","php":20000}],"rateNote":"1박 · 사용하는 방 수 기준 · 날짜별 요금 변동 가능","fromPricePHP":12000},{"id":"gold-villa","name":"엠타운 골드","region":"","tier":"4룸·5룸","public":true,"photoUrl":"assets/villas/gold-1.jpg","photos":["assets/villas/gold-1.jpg","assets/villas/gold-2.jpg","assets/villas/gold-3.jpg","assets/villas/gold-4.jpg","assets/villas/gold-5.jpg"],"photoAlt":"엠타운 골드","rates":[{"label":"4룸","php":13000},{"label":"5룸","php":16000}],"rateNote":"10월 말부터 성수기 · 1박","fromPricePHP":13000},{"id":"dia-villa","name":"디아풀빌라","region":"","tier":"","public":false,"photoUrl":"","photos":[],"photoAlt":"디아풀빌라","rates":[],"rateNote":"","fromPricePHP":null},{"id":"nemo-villa","name":"네모풀빌라","region":"","tier":"실속","public":false,"photoUrl":"","photos":[],"photoAlt":"네모풀빌라","rates":[],"rateNote":"","fromPricePHP":null},{"id":"oystone-villa","name":"오이스톤","region":"","tier":"","public":false,"photoUrl":"","photos":[],"photoAlt":"오이스톤","rates":[],"rateNote":"","fromPricePHP":null}]};
 /**
@@ -677,6 +806,10 @@ function normalizeSiteConfig(raw = {}) {
     phone: safePhone(source.phone),
     naverBlogUrl: safePublicUrl(source.naverBlogUrl),
     googleBlogUrl: safePublicUrl(source.googleBlogUrl),
+    // 상담 접수 주소: Google Apps Script 웹앱(/exec)만 허용. 비밀값이 아니라 공개 주소다.
+    inquiryEndpoint: /^https:\/\/script\.google\.com\/macros\/s\/[\w-]{20,120}\/exec$/.test(safePublicUrl(source.inquiryEndpoint)) ? safePublicUrl(source.inquiryEndpoint) : '',
+    // 카카오 JavaScript 키: 등록한 도메인에서만 동작하는 공개용 키. REST/Admin 키는 절대 넣지 않는다.
+    kakaoJsKey: typeof source.kakaoJsKey === 'string' && /^[a-f0-9]{32}$/.test(source.kakaoJsKey) ? source.kakaoJsKey : '',
   };
 }
 
@@ -1283,6 +1416,303 @@ const TRAVEL_GUIDES = [
   window.addEventListener('hashchange',restoreHash);
   setupOperations();ensureNames();resetAssignments();syncControls();render();restoreHash();
   if(window.__CLARKSIDE_TEST__)window.__CLARKSIDE_ACTIONS__={update,openShare,closeShare,shareText,exportedQuoteHTML,currentShareHash,render,renderRooms,openGuide,openInquiry,renderInquiry,siteConfig};
+})();
+
+// 상담 신청(카카오 상담 + 시트/텔레그램 접수)에 쓰는 순수 함수. DOM 없음 → node --test 로 검사.
+
+const CONSULT_SERVICES = Object.freeze([
+  { id: 'villa', label: '풀빌라', travel: true },
+  { id: 'golf', label: '골프', travel: true },
+  { id: 'transfer', label: '차량·픽업', travel: true },
+  { id: 'airport', label: '공항 VIP', travel: true },
+  { id: 'exchange', label: '환전', travel: false },
+  { id: 'documents', label: '서류 대행', travel: false },
+  { id: 'manpower', label: '인력 연결', travel: false },
+  { id: 'marketing', label: '마케팅', travel: false },
+]);
+
+const SERVICE_IDS = new Set(CONSULT_SERVICES.map(service => service.id));
+
+const consultLine = (value, limit) => typeof value === 'string'
+  ? Array.from(value.replace(/[\u0000-\u001F\u007F-\u009F‪-‮⁦-⁩]/g, ' ').replace(/\s+/g, ' ').trim()).slice(0, limit).join('')
+  : '';
+
+const consultNotes = value => typeof value === 'string'
+  ? Array.from(value.replace(/\r\n?/g, '\n').replace(/[\u0000-\u0008\u000B-\u001F\u007F-\u009F‪-‮⁦-⁩]/g, '').trim()).slice(0, 800).join('')
+  : '';
+
+const clampInt = (value, min, max, fallback) => {
+  const number = Number(value);
+  return Number.isInteger(number) ? Math.min(max, Math.max(min, number)) : fallback;
+};
+
+function normalizeConsult(raw = {}) {
+  const source = raw && typeof raw === 'object' ? raw : {};
+  const services = [...new Set(Array.isArray(source.services) ? source.services : [])].filter(id => SERVICE_IDS.has(id));
+  const date = typeof source.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(source.date) ? source.date : '';
+  return {
+    services,
+    date,
+    nights: clampInt(source.nights, 1, 30, 3),
+    people: clampInt(source.people, 1, 60, 4),
+    villa: consultLine(source.villa, 60),
+    name: consultLine(source.name, 40),
+    contact: consultLine(source.contact, 60),
+    notes: consultNotes(source.notes),
+    source: consultLine(source.source, 120),
+  };
+}
+
+const consultIsTravel = consult => consult.services.some(id => CONSULT_SERVICES.find(service => service.id === id)?.travel);
+
+function consultMissing(consult) {
+  const missing = [];
+  if (!consult.services.length) missing.push('services');
+  if (!consult.name) missing.push('name');
+  return missing;
+}
+
+const serviceLabels = consult => consult.services.map(id => CONSULT_SERVICES.find(service => service.id === id).label).join(' · ');
+
+const koreanDate = date => {
+  if (!date) return '날짜 미정';
+  const [, month, day] = date.split('-').map(Number);
+  return `${month}월 ${day}일`;
+};
+
+/** 문의번호: 날짜(마닐라 기준 MMDD) + 4자리. 카톡 대화와 시트 행을 맞춰보는 용도. */
+function makeConsultId(now = new Date(), random = Math.random) {
+  const manila = new Date(now.getTime() + 8 * 60 * 60 * 1000);
+  const mmdd = String(manila.getUTCMonth() + 1).padStart(2, '0') + String(manila.getUTCDate()).padStart(2, '0');
+  return `CS-${mmdd}-${String(Math.floor(random() * 10000)).padStart(4, '0')}`;
+}
+
+/** 손님이 카톡 상담창에 붙여넣는 짧은 글. 담당자가 보는 시트/텔레그램 내용과 같다. */
+function buildConsultText(raw, { id = '', brandName = '클락사이드' } = {}) {
+  const consult = normalizeConsult(raw);
+  const travel = consultIsTravel(consult);
+  return [
+    `[${brandName} 상담 신청]${id ? ` ${id}` : ''}`,
+    `성함: ${consult.name || '-'}${consult.contact ? ` (${consult.contact})` : ''}`,
+    `필요한 것: ${serviceLabels(consult) || '-'}`,
+    ...(travel ? [`일정: ${koreanDate(consult.date)} 도착 · ${consult.nights}박 · ${consult.people}명`] : []),
+    ...(consult.villa && consult.services.includes('villa') ? [`관심 숙소: ${consult.villa}`] : []),
+    ...(consult.notes ? [`요청: ${consult.notes}`] : []),
+  ].join('\n');
+}
+
+/** 일행에게 카톡으로 보내는 일정 공유 글. 이름·연락처는 넣지 않는다. */
+function buildShareText(raw, { brandName = '클락사이드' } = {}) {
+  const consult = normalizeConsult(raw);
+  const travel = consultIsTravel(consult);
+  return [
+    `[${brandName}] 클락 여행 일정 공유`,
+    ...(travel ? [`${koreanDate(consult.date)} 도착 · ${consult.nights}박 · ${consult.people}명`] : []),
+    ...(consult.services.length ? [serviceLabels(consult) + (consult.villa && consult.services.includes('villa') ? ` (${consult.villa})` : '')] : ['풀빌라 · 골프 · 차량 한 번에 상담']),
+  ].join('\n');
+}
+
+/** 접수 서버(Google Apps Script)로 보내는 데이터. 화면에 보이는 것 외에 개인정보를 더 담지 않는다. */
+function buildConsultPayload(raw, { id, page = '' } = {}) {
+  const consult = normalizeConsult(raw);
+  const travel = consultIsTravel(consult);
+  return {
+    id,
+    name: consult.name,
+    contact: consult.contact,
+    services: consult.services.map(serviceId => CONSULT_SERVICES.find(service => service.id === serviceId).label),
+    date: travel ? consult.date || '미정' : '',
+    nights: travel ? consult.nights : '',
+    people: travel ? consult.people : '',
+    villa: consult.services.includes('villa') ? consult.villa : '',
+    notes: consult.notes,
+    source: consult.source,
+    page: consultLine(page, 200),
+  };
+}
+
+// 카카오 상담 흐름: 선택 → 접수(시트·텔레그램) → 카톡 상담창. app.js 뒤에 같은 묶음 안에서 실행된다.
+(() => {
+  'use strict';
+  const form = document.getElementById('consult-form');
+  if (!form || typeof form.querySelectorAll !== 'function') return; // 테스트용 가짜 화면에서는 건너뜀
+  const $ = id => document.getElementById(id);
+  const settings = normalizeSiteConfig(SITE_CONFIG_RAW);
+  const villas = typeof SITE_CATALOG === 'object' && SITE_CATALOG && Array.isArray(SITE_CATALOG.villas) ? SITE_CATALOG.villas : [];
+  const state = { services: [], date: '', nights: 3, people: 4, villa: '', source: '' };
+  let lastSent = { key: '', id: '', at: 0 };
+  let toastTimer;
+
+  const read = () => ({ ...state, name: $('consult-name').value, contact: $('consult-contact').value, notes: $('consult-notes').value });
+
+  function render() {
+    form.querySelectorAll('[data-consult-service]').forEach(input => { input.checked = state.services.includes(input.value); });
+    const travel = consultIsTravel(normalizeConsult(state));
+    $('consult-trip').hidden = !travel;
+    $('consult-last-num').textContent = travel ? '3' : '2';
+    $('consult-nights').textContent = `${state.nights}박`;
+    $('consult-people').textContent = `${state.people}명`;
+    const showVilla = Boolean(state.villa) && state.services.includes('villa');
+    $('consult-villa').hidden = !showVilla;
+    $('consult-villa-name').textContent = state.villa;
+    if (state.services.length) $('consult-services-error').hidden = true;
+  }
+
+  function addService(id) {
+    if (!CONSULT_SERVICES.some(service => service.id === id)) return;
+    if (!state.services.includes(id)) state.services.push(id);
+    render();
+  }
+
+  function toast(message) {
+    let el = $('consult-toast');
+    if (!el) { el = document.createElement('div'); el.id = 'consult-toast'; el.className = 'c-toast'; el.setAttribute('role', 'status'); document.body.appendChild(el); }
+    el.textContent = message; el.classList.add('is-on');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('is-on'), 2600);
+  }
+
+  // 휴대폰에서는 소개 글을 건너뛰고 바로 입력 카드로 이동.
+  const goConsult = () => { (window.innerWidth <= 900 ? form : $('consult')).scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+
+  async function copy(text) {
+    try { await navigator.clipboard.writeText(text); return true; } catch {}
+    try {
+      const area = document.createElement('textarea'); area.value = text; area.setAttribute('readonly', '');
+      area.style.cssText = 'position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(area); area.select();
+      const ok = document.execCommand('copy'); area.remove(); return ok;
+    } catch { return false; }
+  }
+
+  // 기존 화면의 버튼(풀빌라 선택, 서비스 추가, 문의, 공유)을 새 상담 흐름으로 연결한다.
+  window.addEventListener('click', event => {
+    const target = event.target.closest('[data-villa-request],[data-service],[data-inquiry],[data-share],a[href="#planner"],a[href="#inquiry"],a[href="#consult"]');
+    if (!target || target.closest('#consult-form')) return;
+    event.preventDefault(); event.stopPropagation();
+    if (target.dataset.villaRequest) {
+      const villa = villas.find(item => item.id === target.dataset.villaRequest);
+      if (villa) { state.villa = villa.name; addService('villa'); toast(`${villa.name} · 상담 내용에 담았어요`); }
+      goConsult();
+    } else if (target.dataset.service) {
+      addService(target.dataset.service);
+      toast(`${CONSULT_SERVICES.find(service => service.id === target.dataset.service)?.label || '선택한 항목'} · 상담 내용에 담았어요`);
+      goConsult();
+    } else if (target.hasAttribute('data-share')) {
+      share();
+    } else {
+      goConsult();
+    }
+  }, true);
+
+  form.addEventListener('change', event => {
+    const input = event.target;
+    if (input.matches('[data-consult-service]')) {
+      state.services = [...form.querySelectorAll('[data-consult-service]:checked')].map(item => item.value);
+      render();
+    } else if (input.id === 'consult-date') state.date = input.value;
+  });
+  form.querySelectorAll('[data-step]').forEach(button => button.addEventListener('click', () => {
+    const key = button.dataset.step, delta = Number(button.dataset.delta);
+    const limits = key === 'nights' ? [1, 30] : [1, 60];
+    state[key] = Math.min(limits[1], Math.max(limits[0], state[key] + delta));
+    render();
+  }));
+  $('consult-villa-clear').addEventListener('click', () => { state.villa = ''; render(); });
+  $('consult-name').addEventListener('input', () => { $('consult-name-error').hidden = true; });
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const raw = read();
+    if ($('consult-hp').value) return; // 자동 입력 로봇
+    const consult = normalizeConsult(raw);
+    const missing = consultMissing(consult);
+    $('consult-services-error').hidden = !missing.includes('services');
+    $('consult-name-error').hidden = !missing.includes('name');
+    if (missing.length) {
+      (missing[0] === 'services' ? $('consult-services') : $('consult-name')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (missing[0] === 'name') $('consult-name').focus({ preventScroll: true });
+      return;
+    }
+    // 같은 내용을 2분 안에 다시 누르면 같은 문의번호로 처리하고 다시 보내지 않는다.
+    const key = JSON.stringify(consult);
+    const repeat = lastSent.key === key && Date.now() - lastSent.at < 120000;
+    const id = repeat ? lastSent.id : makeConsultId();
+    const text = buildConsultText(consult, { id, brandName: settings.brandName });
+    copy(text);
+    if (!repeat && settings.inquiryEndpoint) {
+      const payload = buildConsultPayload(consult, { id, page: location.href.split('#')[0] });
+      try {
+        fetch(settings.inquiryEndpoint, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) }).catch(() => {});
+      } catch {}
+    }
+    lastSent = { key, id, at: repeat ? lastSent.at : Date.now() };
+    if (settings.kakaoUrl) window.open(settings.kakaoUrl, '_blank', 'noopener');
+    showDone(id);
+  });
+
+  function showDone(id) {
+    const ready = Boolean(settings.inquiryEndpoint && settings.kakaoUrl);
+    $('consult-id').textContent = id;
+    $('consult-preview-note').hidden = ready;
+    const openKakao = $('consult-open-kakao');
+    openKakao.hidden = !settings.kakaoUrl;
+    if (settings.kakaoUrl) openKakao.href = settings.kakaoUrl;
+    if (!settings.kakaoUrl) $('consult-next').innerHTML = '담당자가 확인 후 남겨주신 연락처로 안내드립니다.<br>신청 내용은 복사되어 있어요.';
+    $('consult-done').hidden = false;
+    document.body.classList.add('consult-locked');
+    $('consult-close').focus();
+  }
+  const closeDone = () => { $('consult-done').hidden = true; document.body.classList.remove('consult-locked'); };
+  $('consult-close').addEventListener('click', closeDone);
+  $('consult-done').addEventListener('click', event => { if (event.target.id === 'consult-done') closeDone(); });
+  window.addEventListener('keydown', event => { if (event.key === 'Escape' && !$('consult-done').hidden) closeDone(); });
+
+  // 일행 공유: 카카오 공유(키 설정 시) → 휴대폰 공유창 → 복사 순서로 시도.
+  let kakaoReady = null;
+  function loadKakao() {
+    if (!settings.kakaoJsKey) return Promise.resolve(false);
+    if (kakaoReady) return kakaoReady;
+    kakaoReady = new Promise(resolve => {
+      const script = document.createElement('script');
+      script.src = 'https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js';
+      script.crossOrigin = 'anonymous';
+      script.onload = () => { try { if (!window.Kakao.isInitialized()) window.Kakao.init(settings.kakaoJsKey); resolve(true); } catch { resolve(false); } };
+      script.onerror = () => resolve(false);
+      document.head.appendChild(script);
+    });
+    return kakaoReady;
+  }
+  if (settings.kakaoJsKey) form.addEventListener('pointerenter', loadKakao, { once: true });
+
+  async function share() {
+    const text = buildShareText(read(), { brandName: settings.brandName });
+    const url = location.href.split('#')[0];
+    if (await loadKakao()) {
+      try {
+        window.Kakao.Share.sendDefault({ objectType: 'text', text, link: { mobileWebUrl: url, webUrl: url }, buttonTitle: '일정·요금 보기' });
+        return;
+      } catch {}
+    }
+    if (navigator.share) {
+      try { await navigator.share({ title: `${settings.brandName} 여행 일정`, text, url }); return; }
+      catch (error) { if (error && error.name === 'AbortError') return; }
+    }
+    toast(await copy(`${text}\n${url}`) ? '공유 내용을 복사했어요. 카톡방에 붙여넣어 보내주세요' : '공유를 열지 못했어요');
+  }
+  form.querySelector('[data-kshare]').addEventListener('click', share);
+
+  if (settings.phone) { const call = $('consult-call'); call.href = `tel:${settings.phone}`; call.hidden = false; }
+
+  // 블로그·가이드에서 넘어온 경우(#inquiry=B01 등) 출처를 남기고 상담 카드로 이동.
+  function fromHash() {
+    const match = location.hash.match(/^#(?:inquiry|plan)=(B\d{2})$/);
+    if (!match) return;
+    const guide = TRAVEL_GUIDES.find(item => item.id === match[1]);
+    if (guide) state.source = `${guide.id} ${guide.title}`;
+    setTimeout(goConsult, 250);
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+  render();
 })();
 
 })();</script>

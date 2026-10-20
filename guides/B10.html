@@ -161,4 +161,92 @@ footer p{color:#c9d6c6}
 /* 현지 지원 카드 4개: 넓은 화면 4열, 중간 2열 */
 @media(min-width:1101px){.support-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(min-width:601px) and (max-width:1100px){.support-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Claude 2026-10-20: 카카오 상담 카드 — 50~60대 손님 기준: 큰 글씨·큰 버튼·단계 최소화 */
+.legacy{display:none!important}
+.consult-section{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.consult-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:56px;align-items:start}
+.consult-head{position:sticky;top:110px}
+.consult-head h2{margin:10px 0 18px}
+.consult-lead{font-size:17px;line-height:1.7;color:#44514a;margin:0 0 28px}
+.consult-promise{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.consult-promise li{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;color:var(--forest)}
+.consult-promise b{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;color:#6d8a63}
+.consult-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 34px 28px;box-shadow:0 24px 60px #193e3412}
+.c-step{border:0;margin:0 0 30px;padding:0;min-width:0}
+.c-step legend{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:var(--forest);margin-bottom:16px;padding:0}
+.c-step legend small{font-size:14px;font-weight:500;color:var(--muted)}
+.c-num{width:30px;height:30px;border-radius:50%;background:var(--forest);color:#fff;display:grid;place-items:center;font-size:15px;flex:none}
+.c-chips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.c-chip{position:relative;cursor:pointer}
+.c-chip input{position:absolute;opacity:0;pointer-events:none}
+.c-chip span{display:flex;align-items:center;justify-content:center;gap:6px;min-height:58px;border:1.5px solid #d5ddd2;border-radius:14px;background:#fff;font-size:17px;font-weight:600;color:#2c3d35;transition:all .15s ease;text-align:center;padding:6px}
+.c-chip:hover span{border-color:#9db394}
+.c-chip input:checked+span{background:var(--forest);border-color:var(--forest);color:#fff}
+.c-chip input:checked+span:before{content:"✓";font-size:15px;color:var(--lime)}
+.c-chip input:focus-visible+span{outline:3px solid #9db394;outline-offset:2px}
+.c-error{margin:10px 0 0;font-size:15px;font-weight:600;color:#b4432f}
+.c-villa{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding:12px 16px;border-radius:12px;background:#f1f6e4;font-size:16px;color:var(--forest)}
+.c-villa strong{margin-left:6px}
+.c-villa button{border:0;background:none;color:#6d7a70;font-size:14px;text-decoration:underline;cursor:pointer;min-height:40px}
+.c-trip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.c-person{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.c-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.c-field>span{font-size:15px;font-weight:600;color:#3b4a42}
+.c-field em{font-style:normal;font-weight:500;color:var(--muted);font-size:13px;margin-left:4px}
+.c-field small{font-size:13px;color:var(--muted)}
+.c-field input,.c-field textarea{font:inherit;font-size:17px;color:var(--ink);border:1.5px solid #d5ddd2;border-radius:12px;padding:0 14px;min-height:56px;background:#fff;width:100%;box-sizing:border-box}
+.c-field textarea{padding:14px;min-height:76px;resize:vertical;line-height:1.5}
+.c-field input:focus,.c-field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px #193e341f}
+.c-notes{margin-top:12px}
+.c-stepper{display:grid;grid-template-columns:52px 1fr 52px;align-items:center;border:1.5px solid #d5ddd2;border-radius:12px;min-height:56px;overflow:hidden;background:#fff}
+.c-stepper button{border:0;background:#f4f6f1;font-size:24px;color:var(--forest);height:100%;min-height:53px;cursor:pointer}
+.c-stepper button:active{background:#e4eadf}
+.c-stepper output{text-align:center;font-size:18px;font-weight:700;color:var(--forest)}
+.c-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.kakao-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:64px;border:0;border-radius:14px;background:#FEE500;color:#191919;font:inherit;font-size:19px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px #fee50040;transition:transform .15s ease,box-shadow .15s ease}
+.kakao-button:hover{transform:translateY(-1px);box-shadow:0 12px 26px #e6cf0040}
+.kakao-button svg{width:24px;height:24px;fill:#191919}
+.consult-assure{text-align:center;font-size:14px;color:var(--muted);margin:12px 0 18px}
+.consult-alt{display:flex;gap:10px;border-top:1px solid var(--line);padding-top:18px}
+.c-share,.c-call{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border:1.5px solid #d5ddd2;border-radius:12px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--forest);cursor:pointer;text-decoration:none}
+.c-share:hover,.c-call:hover{border-color:var(--forest)}
+.c-share svg,.c-call svg,.m-share svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.c-call[hidden]{display:none}
+.c-toast{position:fixed;left:50%;bottom:100px;transform:translate(-50%,20px);background:#1d2b25;color:#fff;padding:14px 22px;border-radius:999px;font-size:16px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:200;max-width:calc(100vw - 32px);text-align:center}
+.c-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.consult-done{position:fixed;inset:0;background:#0b1f1b8c;backdrop-filter:blur(4px);display:grid;place-items:center;z-index:300;padding:16px}
+.consult-done[hidden]{display:none}
+.consult-done-card{background:#fff;border-radius:24px;padding:36px 30px 24px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px #0006;animation:cpop .25s ease}
+@keyframes cpop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.consult-check{width:64px;height:64px;border-radius:50%;background:#e6f2d0;display:grid;place-items:center;margin:0 auto 18px}
+.consult-check svg{width:34px;height:34px;fill:none;stroke:var(--forest);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.consult-done-card h3{font-size:24px;margin:0 0 8px;color:var(--forest)}
+.consult-id{font-size:16px;color:var(--muted);margin:0 0 16px}
+.consult-id strong{color:var(--forest);font-size:18px;letter-spacing:.5px}
+.consult-next{font-size:16px;line-height:1.7;color:#3b4a42;margin:0 0 22px}
+.consult-preview-note{background:#fff6dc;color:#7a5b00;border-radius:10px;padding:10px 12px;font-size:13px;margin:0 0 16px;line-height:1.5}
+.consult-close{margin-top:10px;width:100%;min-height:50px;border:0;background:none;font:inherit;font-size:16px;color:var(--muted);cursor:pointer}
+body.consult-locked{overflow:hidden}
+.header-kakao{background:#FEE500!important;color:#191919!important;border-color:#FEE500!important;font-weight:700}
+.mobile-cost-bar{display:none}
+@media(max-width:1100px){.consult-inner{grid-template-columns:1fr;gap:28px}.consult-head{position:static}.consult-promise{grid-template-columns:repeat(3,auto);justify-content:start;gap:18px}}
+@media(max-width:900px){
+ .mobile-cost-bar{display:flex!important;position:fixed;left:0;right:0;bottom:0;z-index:90;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fffffff2;backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+ .m-share{flex:0 0 96px;display:flex;align-items:center;justify-content:center;gap:6px;min-height:54px;border:1.5px solid #d5ddd2;border-radius:14px;background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--forest)}
+ .m-kakao{flex:1;min-height:54px;font-size:18px}
+}
+@media(max-width:600px){
+ .consult-card{padding:24px 18px 20px;border-radius:18px}
+ .consult-lead{font-size:16px}
+ .consult-promise{grid-template-columns:1fr;gap:10px}
+ .c-step legend{font-size:19px}
+ .c-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .c-trip{grid-template-columns:1fr 1fr}.c-date{grid-column:1/-1}
+ .c-person{grid-template-columns:1fr}
+ .consult-alt{flex-direction:column}
+}
+.c-toast{top:96px;bottom:auto;transform:translate(-50%,-12px)}
+#consult-form{scroll-margin-top:96px}
+@media(max-width:600px){.consult-promise{display:none}.consult-lead{margin-bottom:6px}#consult-form{scroll-margin-top:84px}}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">공항 이동 · B10</p><h1>공항 VIP·픽업·라운지, 필요한 도움부터</h1><p>공항 안의 안내, 숙소까지의 차량, 대기 공간은 제공 범위를 각각 확인해야 합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">픽업은 만나는 방법부터 확인하기</h2><p>공항과 숙소 사이 차량이 필요하다면 항공편명, 현지 도착 날짜와 시간, 인원, 짐의 수와 목적지를 알려주세요. 만나는 지점과 연락 방법, 항공 지연 시 대기 기준도 확인합니다. 차량 픽업에 공항 내부 안내나 라운지 이용이 들어 있는지는 별도로 물어봐야 합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">공항 안에서 어느 구간을 도와주는지</h2><p>공항 동행을 원한다면 도착용인지 출발용인지, 어디서 만나 어느 구간까지 안내받는지 확인하세요. 체크인 안내나 수하물 지원 등 필요한 도움도 구체적으로 적습니다. VIP라는 이름만으로 모든 서비스가 포함되거나 특정 대기 시간이 보장된다고 생각하지 않는 편이 좋습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">라운지는 장소와 이용 시간 확인하기</h2><p>출국 전 대기 공간이 필요하다면 이용 가능한 구역과 시간, 동반 아동 기준과 포함 항목을 확인하세요. 라운지 이용권과 공항 동행은 별도 예약일 수 있습니다. 항공편 일정과 맞는지 먼저 보고, 음식·음료나 추가 결제 항목도 해당 상품의 안내를 기준으로 정합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">상품 이름보다 원하는 도움 보내기</h2><p>도착 후 숙소까지 이동, 출발 때 공항 안내, 긴 대기 중 휴식처럼 필요한 도움을 나눠 알려주세요. 상담에서 제공 가능 범위와 각각의 조건을 확인합니다. 예약 전에는 실제 제공 업체, 포함·제외 항목, 만나는 방법과 변경·취소 조건이 적힌 안내를 받아두세요.</p><a class="button button-dark" href="../index.html#inquiry=B10">이 글의 조건으로 여행 문의하기 ↗</a></article><a class="guide-back" href="../index.html#plan=B10">필요한 공항 서비스 문의하기 ↗</a></main></body></html>
