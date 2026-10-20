@@ -345,4 +345,62 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
  .course-grid.swipe .course-card strong{font-size:16px;line-height:1.35}
  .course-grid.swipe .course-card span{font-size:13px;margin-top:6px}
 }
+
+/* 풀빌라: 카드는 간단히, 자세한 사진·요금은 눌러서 뜨는 상세 화면에서 */
+.villa-more{display:none}
+.villa-open{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:46px;border:0;border-top:1px solid var(--line);background:none;font:inherit;font-size:15px;font-weight:600;color:var(--forest);cursor:pointer;padding:0;margin-bottom:6px}
+.villa-open span{font-size:20px}
+.villa-card-visual,.villa-card h3,.villa-price{cursor:pointer}
+.vs{position:fixed;inset:0;z-index:380;background:#0b1f1b00;display:flex;align-items:center;justify-content:center;padding:24px;transition:background .25s}
+.vs[hidden]{display:none}
+.vs.is-open{background:#0b1f1b99}
+.vs-panel{background:#fff;border-radius:22px;width:min(760px,100%);max-height:calc(100vh - 48px);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px #0006;transform:translateY(16px);opacity:0;transition:transform .25s ease,opacity .25s}
+.vs.is-open .vs-panel{transform:none;opacity:1}
+.vs-grab{display:none}
+.vs-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:22px 24px 12px}
+.vs-kicker{font-size:13px;color:var(--muted)}
+.vs-head h3{font-size:24px;margin:2px 0 4px;color:var(--forest)}
+.vs-price{margin:0;font-size:15px;color:var(--muted)}.vs-price strong{font-size:22px;color:var(--forest);font-weight:700}
+.vs-close{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:#f2f4f0;font-size:28px;line-height:1;color:#4f5c53;cursor:pointer}
+.vs-body{overflow-y:auto;padding:4px 24px 12px;-webkit-overflow-scrolling:touch}
+.vs-body .villa-gallery{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -24px 6px;padding:0 24px;scroll-padding-left:24px;scrollbar-width:none}
+.vs-body .villa-gallery::-webkit-scrollbar{display:none}
+.vs-body .villa-gallery a{flex:0 0 72%;scroll-snap-align:start}
+.vs-body .villa-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+.vs-body .villa-gallery-count{font-size:13px;color:var(--muted);margin:6px 0 14px}
+.vs-body .villa-rates{font-size:16px}.vs-body .villa-rates th,.vs-body .villa-rates td{padding:12px 0}
+.vs-body .villa-rates td{font-size:17px}
+.vs-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 24px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fff}
+.vs-ask{min-height:56px;border-radius:14px;border:1.5px solid var(--forest);background:#fff;color:var(--forest);font:inherit;font-size:17px;font-weight:700;cursor:pointer}
+.vs-actions .kakao-button{min-height:56px;font-size:17px;box-shadow:none}
+@media(max-width:600px){
+ /* 목록: 한 줄 카드(작은 사진 + 이름·가격) — 4곳이 한 화면에 */
+ .villa-catalog{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+ .villa-card{display:grid;grid-template-columns:116px 1fr;border-radius:14px;min-height:112px}
+ .villa-card-visual.has-photo{aspect-ratio:auto!important;height:100%;min-height:112px}
+ .villa-card-visual:not(.has-photo){display:none}
+ .villa-card-body{padding:12px 14px!important;display:flex;flex-direction:column;justify-content:center}
+ .villa-card-kicker{font-size:12px!important}
+ .villa-card-body h3{font-size:18px!important;margin:1px 0 2px!important}
+ .villa-price{margin:0 0 2px!important;font-size:13px}.villa-price strong{font-size:18px!important}
+ .villa-open{border-top:0;min-height:30px;font-size:14px;margin:0;justify-content:flex-start;gap:4px}
+ .villa-card-body .villa-request{display:none}
+ /* 상세: 아래에서 올라오는 시트 */
+ .vs{padding:0;align-items:flex-end}
+ .vs-panel{width:100%;max-height:92vh;border-radius:22px 22px 0 0;transform:translateY(100%);opacity:1;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+ .vs-grab{display:block;width:44px;height:5px;border-radius:9px;background:#d5ddd2;margin:10px auto 0}
+ .vs-head{padding:12px 18px 10px}.vs-head h3{font-size:22px}
+ .vs-body{padding:4px 18px 10px}
+ .vs-body .villa-gallery{margin:0 -18px 4px;padding:0 18px;scroll-padding-left:18px}
+ .vs-body .villa-gallery a{flex-basis:86%}
+ .vs-actions{padding:12px 18px calc(12px + env(safe-area-inset-bottom))}
+}
+@media(max-width:600px){
+ .villa-card{grid-template-columns:104px 1fr;min-height:96px}
+ .villa-card-visual.has-photo{min-height:96px}
+ .villa-card-body{padding:10px 12px!important}
+ .villa-card-kicker{display:none}
+ .villa-open{min-height:26px;font-size:13px;color:#5f6c63}
+ .villa-catalog{gap:8px!important}
+}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">단체여행 총무 · B13</p><h1>총무가 덜 설명해도 되는 공유 견적</h1><p>팀 총액, 개인별 선택, 객실 배정을 같은 기준으로 정리하면 일행과의 의사결정이 쉬워집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">첫 화면은 여행 조건과 총액</h2><p>여행 날짜, 전체 인원, 객실 구성, 골프 참여 인원과 작성일을 먼저 적으세요. 그 아래에 예약대금, 현지 별도 비용과 아직 확인하지 못한 항목을 나눠 표시합니다. 포함 범위를 읽을 수 있어야 일행도 단순한 1인 가격보다 무엇에 돈을 쓰는지 이해하기 쉽습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">공동비와 개인 선택을 나누기</h2><p>숙소나 공동 차량은 일행이 합의한 기준으로 나누고, 개인 골프나 추가 서비스는 이용자에게 배정하세요. 일부만 골프를 친다면 그 비용을 전원에게 같은 비율로 나누기 전에 합의가 필요합니다. 독실이나 숙박 기간 차이가 있을 때도 개인 추가분을 따로 적으면 정산이 편합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">객실 배정은 확인 상태까지</h2><p>방별 이용자와 침대 구성을 함께 적고, 일행 협의 중인 배정과 숙소에서 확인한 구성을 구분하세요. 정원에 맞아도 잠자리 방식이 다를 수 있습니다. 넓게 공유하는 문서에는 불필요한 연락처나 계좌번호를 빼고, 이름 대신 별칭을 사용해도 충분합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">바뀐 조건은 같은 문서에 남기기</h2><p>인원이나 날짜, 골프 일정이 바뀌면 변경일과 이유를 남기세요. 받은 돈, 여행사에 전달한 돈과 남은 납부액도 구분해 기록합니다. 견적 공유는 예약 확정과 다르므로 최종 조건과 결제 안내를 확인한 뒤 일행에게 알려주세요. 최신본의 제목과 작성일도 맞춰두면 좋습니다.</p><a class="button button-dark" href="../index.html#inquiry=B13">이 글의 조건으로 여행 문의하기 ↗</a></article><a class="guide-back" href="../index.html#plan=B13">총무용 공유 견적 만들기 ↗</a></main></body></html>
