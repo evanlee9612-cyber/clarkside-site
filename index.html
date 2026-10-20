@@ -346,6 +346,12 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
  .villa-catalog.swipe .villa-gallery a{flex-basis:40%}
  .journal-grid.swipe .journal-card,.support-grid.swipe .support-card{height:auto}
 }
+/* 골프장: 카드가 작아서 한 화면에 2장 + 다음 카드 살짝 */
+@media(max-width:600px){
+ .course-grid.swipe>*{flex:0 0 44%;min-height:118px;display:flex;flex-direction:column;justify-content:center}
+ .course-grid.swipe .course-card strong{font-size:16px;line-height:1.35}
+ .course-grid.swipe .course-card span{font-size:13px;margin-top:6px}
+}
 </style>
 </head>
 <body>
@@ -1951,7 +1957,7 @@ function buildConsultPayload(raw, { id, page = '' } = {}) {
   'use strict';
   if (typeof document.querySelectorAll !== 'function' || typeof window.matchMedia !== 'function') return;
   let lists;
-  try { lists = [...document.querySelectorAll('.villa-catalog, .journal-grid, .support-grid')]; } catch { return; }
+  try { lists = [...document.querySelectorAll('.villa-catalog, .journal-grid, .support-grid, .course-grid')]; } catch { return; }
   lists.forEach(list => {
     const cards = [...list.children].filter(el => el.nodeType === 1);
     if (cards.length < 2) return;
