@@ -324,6 +324,28 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 .lb-thumbs{justify-content:flex-start;scroll-behavior:smooth}
 .lb-thumbs:before,.lb-thumbs:after{content:"";flex:1 0 0}
 .villa-gallery-count{font-size:13px;color:var(--muted);margin:-4px 0 12px}
+
+/* 휴대폰: 카드 목록을 옆으로 넘기기 (풀빌라·가이드·현지 지원) */
+.swipe-bar{display:none}
+@media(max-width:600px){
+ .swipe{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin:0 -5%;padding:4px 5% 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:stretch}
+ .swipe::-webkit-scrollbar{display:none}
+ .swipe{scroll-padding-left:5%}
+ .swipe>*{flex:0 0 86%;scroll-snap-align:start;min-width:0}
+ .swipe-bar{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 4px}
+ .swipe-dots{display:flex;gap:7px}
+ .swipe-dots button{width:8px;height:8px;border-radius:99px;border:0;padding:0;background:#c9d2c6;transition:all .2s}
+ .swipe-dots button[aria-current="true"]{width:22px;background:var(--forest)}
+ .swipe-count{font-size:14px;font-weight:600;color:var(--muted);min-width:44px;text-align:center}
+ .swipe-arrow{width:40px;height:40px;border-radius:50%;border:1.5px solid #d5ddd2;background:#fff;font-size:22px;line-height:1;color:var(--forest);padding:0 0 3px}
+ /* 풀빌라 카드: 한 화면에 사진·이름·가격·버튼이 다 보이게 */
+ .villa-catalog.swipe .villa-card-visual.has-photo{aspect-ratio:16/11}
+ .villa-catalog.swipe .villa-card-body{padding:14px 16px}
+ .villa-catalog.swipe .villa-card-body h3{font-size:20px;margin:2px 0 6px}
+ .villa-catalog.swipe .villa-price{margin-bottom:8px}
+ .villa-catalog.swipe .villa-gallery a{flex-basis:40%}
+ .journal-grid.swipe .journal-card,.support-grid.swipe .support-card{height:auto}
+}
 </style>
 </head>
 <body>
@@ -1921,6 +1943,40 @@ function buildConsultPayload(raw, { id, page = '' } = {}) {
     const dx = event.changedTouches[0].clientX - startX, dy = event.changedTouches[0].clientY - startY;
     if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
     startX = null;
+  });
+})();
+
+// 휴대폰(600px 이하)에서 카드 목록을 옆으로 넘기는 형태로: 점 표시 + 이전/다음 버튼. PC에서는 아무것도 하지 않는다.
+(() => {
+  'use strict';
+  if (typeof document.querySelectorAll !== 'function' || typeof window.matchMedia !== 'function') return;
+  let lists;
+  try { lists = [...document.querySelectorAll('.villa-catalog, .journal-grid, .support-grid')]; } catch { return; }
+  lists.forEach(list => {
+    const cards = [...list.children].filter(el => el.nodeType === 1);
+    if (cards.length < 2) return;
+    list.classList.add('swipe');
+    const bar = document.createElement('div');
+    bar.className = 'swipe-bar';
+    bar.innerHTML = '<button type="button" class="swipe-arrow" data-dir="-1" aria-label="이전 카드">‹</button><div class="swipe-dots">'
+      + cards.map((_, i) => `<button type="button" aria-label="${i + 1}번째 카드"></button>`).join('')
+      + `</div><span class="swipe-count" aria-live="polite">1 / ${cards.length}</span><button type="button" class="swipe-arrow" data-dir="1" aria-label="다음 카드">›</button>`;
+    list.after(bar);
+    const dots = [...bar.querySelectorAll('.swipe-dots button')];
+    const count = bar.querySelector('.swipe-count');
+    const current = () => {
+      const left = list.scrollLeft;
+      let best = 0, dist = Infinity;
+      cards.forEach((card, i) => { const d = Math.abs(card.offsetLeft - list.offsetLeft - left - parseFloat(getComputedStyle(list).paddingLeft || 0)); if (d < dist) { dist = d; best = i; } });
+      return best;
+    };
+    const paint = () => { const i = current(); dots.forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false')); count.textContent = `${i + 1} / ${cards.length}`; };
+    const go = i => { const card = cards[Math.max(0, Math.min(cards.length - 1, i))]; list.scrollTo({ left: card.offsetLeft - list.offsetLeft - parseFloat(getComputedStyle(list).paddingLeft || 0), behavior: 'smooth' }); };
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    bar.querySelectorAll('.swipe-arrow').forEach(a => a.addEventListener('click', () => go(current() + Number(a.dataset.dir))));
+    let t; list.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(paint, 60); }, { passive: true });
+    window.addEventListener('resize', paint);
+    paint();
   });
 })();
 
