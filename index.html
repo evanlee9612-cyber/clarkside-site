@@ -256,6 +256,37 @@ body.consult-locked{overflow:hidden}
 .c-toast{top:96px;bottom:auto;transform:translate(-50%,-12px)}
 #consult-form{scroll-margin-top:96px}
 @media(max-width:600px){.consult-promise{display:none}.consult-lead{margin-bottom:6px}#consult-form{scroll-margin-top:84px}}
+
+/* 풀빌라 사진 팝업 */
+.villa-card-visual.has-photo{cursor:zoom-in}
+.villa-gallery a{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:400;background:#0b120ffa;display:grid;grid-template-columns:72px 1fr 72px;grid-template-rows:64px 1fr 92px;align-items:center;color:#fff;animation:lbin .18s ease}
+.lb[hidden]{display:none}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+.lb-top{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:0 20px;height:64px}
+.lb-title{font-size:18px;font-weight:700}
+.lb-count{font-size:15px;color:#c9d3cc;margin-right:auto}
+.lb-close{width:48px;height:48px;border-radius:50%;border:0;background:#ffffff1a;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.lb-close:hover{background:#ffffff33}
+.lb-stage{grid-column:2;grid-row:2;margin:0;height:100%;display:flex;align-items:center;justify-content:center;min-height:0;overflow:hidden}
+.lb-img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;user-select:none;-webkit-user-drag:none}
+.lb-nav{grid-row:2;justify-self:center;width:56px;height:56px;border-radius:50%;border:0;background:#ffffff1f;color:#fff;font-size:34px;line-height:1;cursor:pointer;padding-bottom:4px}
+.lb-nav:hover{background:#ffffff38}
+.lb-prev{grid-column:1}.lb-next{grid-column:3}
+.lb-thumbs{grid-column:1/-1;grid-row:3;display:flex;gap:8px;justify-content:center;padding:12px 16px;overflow-x:auto}
+.lb-thumbs button{flex:none;width:84px;height:60px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:none;cursor:pointer;opacity:.55;transition:opacity .15s}
+.lb-thumbs button[aria-current="true"]{border-color:var(--lime);opacity:1}
+.lb-thumbs button:hover{opacity:.9}
+.lb-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.lb button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.lb-single .lb-nav,.lb-single .lb-thumbs,.lb-single .lb-count{visibility:hidden}
+@media(max-width:600px){
+ .lb{grid-template-columns:1fr;grid-template-rows:60px 1fr 80px;background:#0b120f}
+ .lb-stage{grid-column:1}
+ .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;font-size:28px;background:#0006}
+ .lb-prev{left:8px}.lb-next{right:8px}
+ .lb-thumbs{justify-content:flex-start}.lb-thumbs button{width:64px;height:48px}
+}
 </style>
 </head>
 <body>
@@ -278,9 +309,9 @@ body.consult-locked{overflow:hidden}
  <section id="services" class="section discovery-section" aria-labelledby="discovery-title">
  <div class="section-top"><div><p class="eyebrow">01 · FIND YOUR STAY & PLAY</p><h2 id="discovery-title">머물 곳부터,<br>우리 여행에 맞게.</h2></div><p class="section-description">관심 있는 숙소와 서비스를 살펴보세요.<br>선택한 항목은 아래 문의에 함께 담깁니다.</p></div>
  <div class="discovery-tabs" role="tablist" aria-label="여행 서비스 둘러보기"><button type="button" id="tab-villas" role="tab" aria-selected="true" aria-controls="discovery-villas" tabindex="0" data-discovery-tab="villas">풀빌라 <span>03</span></button><button type="button" id="tab-golf" role="tab" aria-selected="false" aria-controls="discovery-golf" tabindex="-1" data-discovery-tab="golf">골프장</button><button type="button" id="tab-transfer" role="tab" aria-selected="false" aria-controls="discovery-transfer" tabindex="-1" data-discovery-tab="transfer">차량·공항</button></div>
- <div id="discovery-villas" role="tabpanel" aria-labelledby="tab-villas" tabindex="0"><div id="villas" class="catalog-intro"><div><h3>클락·앙헬레스 풀빌라</h3><p>관심 숙소를 골라 문의하세요. 날짜별 객실·침대·요금은 확인 후 안내합니다.</p></div><span class="catalog-note">2026.11~2027.03 성수기 요금 · 1박 기준</span></div><div class="villa-catalog"><article class="villa-card" data-villa-id="coco-valley"><div class="villa-card-visual has-photo"><img src="assets/villas/coco-1.jpg" alt="코코밸리" loading="lazy" decoding="async"></div><div class="villa-card-body"><span class="villa-card-kicker">조식 포함</span><h3>코코밸리</h3><p class="villa-price">1박 <strong>₱18,000</strong>부터</p><details class="villa-more"><summary>객실별 요금 · 사진</summary><div class="villa-gallery"><a href="assets/villas/coco-1.jpg" target="_blank" rel="noopener"><img src="assets/villas/coco-1.jpg" alt="코코밸리 사진 1" loading="lazy" decoding="async"></a><a href="assets/villas/coco-2.jpg" target="_blank" rel="noopener"><img src="assets/villas/coco-2.jpg" alt="코코밸리 사진 2" loading="lazy" decoding="async"></a><a href="assets/villas/coco-3.jpg" target="_blank" rel="noopener"><img src="assets/villas/coco-3.jpg" alt="코코밸리 사진 3" loading="lazy" decoding="async"></a><a href="assets/villas/coco-4.jpg" target="_blank" rel="noopener"><img src="assets/villas/coco-4.jpg" alt="코코밸리 사진 4" loading="lazy" decoding="async"></a><a href="assets/villas/coco-5.jpg" target="_blank" rel="noopener"><img src="assets/villas/coco-5.jpg" alt="코코밸리 사진 5" loading="lazy" decoding="async"></a></div><table class="villa-rates"><tbody><tr><th scope="row">4룸 빌라 · 3룸 사용</th><td>₱18,000</td></tr><tr><th scope="row">4룸 빌라 · 4룸 사용</th><td>₱21,000</td></tr><tr><th scope="row">5룸 빌라 · 4룸 사용</th><td>₱23,000</td></tr><tr><th scope="row">5룸 빌라 · 5룸 사용</th><td>₱28,000</td></tr><tr><th scope="row">6룸 빌라 · 5룸 사용</th><td>₱30,000</td></tr><tr><th scope="row">6룸 빌라 · 6룸 사용</th><td>₱33,000</td></tr></tbody></table><p class="villa-rate-note">2026.11.01~2027.03.31 성수기 · 1박 · 조식 포함 · 날짜별 가능 여부는 확인 후 확정</p></details><button type="button" class="villa-request btn btn-outline" data-villa-request="coco-valley" aria-label="코코밸리 숙소 선택">이 숙소로 문의 <span aria-hidden="true">↗</span></button></div></article>
-<article class="villa-card" data-villa-id="sh-villa"><div class="villa-card-visual has-photo"><img src="assets/villas/sh-1.jpg" alt="SH" loading="lazy" decoding="async"></div><div class="villa-card-body"><span class="villa-card-kicker">앙헬레스 · 5룸 빌라</span><h3>SH</h3><p class="villa-price">1박 <strong>₱12,000</strong>부터</p><details class="villa-more"><summary>객실별 요금 · 사진</summary><div class="villa-gallery"><a href="assets/villas/sh-1.jpg" target="_blank" rel="noopener"><img src="assets/villas/sh-1.jpg" alt="SH 사진 1" loading="lazy" decoding="async"></a><a href="assets/villas/sh-2.jpg" target="_blank" rel="noopener"><img src="assets/villas/sh-2.jpg" alt="SH 사진 2" loading="lazy" decoding="async"></a><a href="assets/villas/sh-3.jpg" target="_blank" rel="noopener"><img src="assets/villas/sh-3.jpg" alt="SH 사진 3" loading="lazy" decoding="async"></a><a href="assets/villas/sh-4.jpg" target="_blank" rel="noopener"><img src="assets/villas/sh-4.jpg" alt="SH 사진 4" loading="lazy" decoding="async"></a><a href="assets/villas/sh-5.jpg" target="_blank" rel="noopener"><img src="assets/villas/sh-5.jpg" alt="SH 사진 5" loading="lazy" decoding="async"></a></div><table class="villa-rates"><tbody><tr><th scope="row">5룸 빌라 · 3룸 사용</th><td>₱12,000</td></tr><tr><th scope="row">5룸 빌라 · 4룸 사용</th><td>₱16,000</td></tr><tr><th scope="row">5룸 빌라 · 5룸 사용</th><td>₱20,000</td></tr></tbody></table><p class="villa-rate-note">1박 · 사용하는 방 수 기준 · 날짜별 요금 변동 가능 · 날짜별 가능 여부는 확인 후 확정</p></details><button type="button" class="villa-request btn btn-outline" data-villa-request="sh-villa" aria-label="SH 숙소 선택">이 숙소로 문의 <span aria-hidden="true">↗</span></button></div></article>
-<article class="villa-card" data-villa-id="gold-villa"><div class="villa-card-visual has-photo"><img src="assets/villas/gold-1.jpg" alt="엠타운 골드" loading="lazy" decoding="async"></div><div class="villa-card-body"><span class="villa-card-kicker">4룸·5룸</span><h3>엠타운 골드</h3><p class="villa-price">1박 <strong>₱13,000</strong>부터</p><details class="villa-more"><summary>객실별 요금 · 사진</summary><div class="villa-gallery"><a href="assets/villas/gold-1.jpg" target="_blank" rel="noopener"><img src="assets/villas/gold-1.jpg" alt="엠타운 골드 사진 1" loading="lazy" decoding="async"></a><a href="assets/villas/gold-2.jpg" target="_blank" rel="noopener"><img src="assets/villas/gold-2.jpg" alt="엠타운 골드 사진 2" loading="lazy" decoding="async"></a><a href="assets/villas/gold-3.jpg" target="_blank" rel="noopener"><img src="assets/villas/gold-3.jpg" alt="엠타운 골드 사진 3" loading="lazy" decoding="async"></a><a href="assets/villas/gold-4.jpg" target="_blank" rel="noopener"><img src="assets/villas/gold-4.jpg" alt="엠타운 골드 사진 4" loading="lazy" decoding="async"></a><a href="assets/villas/gold-5.jpg" target="_blank" rel="noopener"><img src="assets/villas/gold-5.jpg" alt="엠타운 골드 사진 5" loading="lazy" decoding="async"></a></div><table class="villa-rates"><tbody><tr><th scope="row">4룸</th><td>₱13,000</td></tr><tr><th scope="row">5룸</th><td>₱16,000</td></tr></tbody></table><p class="villa-rate-note">10월 말부터 성수기 · 1박 · 날짜별 가능 여부는 확인 후 확정</p></details><button type="button" class="villa-request btn btn-outline" data-villa-request="gold-villa" aria-label="엠타운 골드 숙소 선택">이 숙소로 문의 <span aria-hidden="true">↗</span></button></div></article></div><p class="catalog-footnote">표시 요금은 숙소 1채 1박 기준입니다. 날짜별 이용 가능 여부와 최종 금액은 문의 후 확인해 안내합니다. 다른 숙소도 인원·예산에 맞춰 추천해 드려요.</p><button type="button" class="text-button" data-service="villa">아직 못 골랐어요 · 인원에 맞는 숙소 추천받기 ↗</button></div>
+ <div id="discovery-villas" role="tabpanel" aria-labelledby="tab-villas" tabindex="0"><div id="villas" class="catalog-intro"><div><h3>클락·앙헬레스 풀빌라</h3><p>관심 숙소를 골라 문의하세요. 날짜별 객실·침대·요금은 확인 후 안내합니다.</p></div><span class="catalog-note">2026.11~2027.03 성수기 요금 · 1박 기준</span></div><div class="villa-catalog"><article class="villa-card" data-villa-id="coco-valley"><div class="villa-card-visual has-photo"><img src="assets/villas/coco-1.jpg" alt="코코밸리" loading="lazy" decoding="async"></div><div class="villa-card-body"><span class="villa-card-kicker">조식 포함</span><h3>코코밸리</h3><p class="villa-price">1박 <strong>₱18,000</strong>부터</p><details class="villa-more"><summary>객실별 요금 · 사진</summary><div class="villa-gallery"><a href="assets/villas/coco-1.jpg"><img src="assets/villas/coco-1.jpg" alt="코코밸리 사진 1" loading="lazy" decoding="async"></a><a href="assets/villas/coco-2.jpg"><img src="assets/villas/coco-2.jpg" alt="코코밸리 사진 2" loading="lazy" decoding="async"></a><a href="assets/villas/coco-3.jpg"><img src="assets/villas/coco-3.jpg" alt="코코밸리 사진 3" loading="lazy" decoding="async"></a><a href="assets/villas/coco-4.jpg"><img src="assets/villas/coco-4.jpg" alt="코코밸리 사진 4" loading="lazy" decoding="async"></a><a href="assets/villas/coco-5.jpg"><img src="assets/villas/coco-5.jpg" alt="코코밸리 사진 5" loading="lazy" decoding="async"></a></div><table class="villa-rates"><tbody><tr><th scope="row">4룸 빌라 · 3룸 사용</th><td>₱18,000</td></tr><tr><th scope="row">4룸 빌라 · 4룸 사용</th><td>₱21,000</td></tr><tr><th scope="row">5룸 빌라 · 4룸 사용</th><td>₱23,000</td></tr><tr><th scope="row">5룸 빌라 · 5룸 사용</th><td>₱28,000</td></tr><tr><th scope="row">6룸 빌라 · 5룸 사용</th><td>₱30,000</td></tr><tr><th scope="row">6룸 빌라 · 6룸 사용</th><td>₱33,000</td></tr></tbody></table><p class="villa-rate-note">2026.11.01~2027.03.31 성수기 · 1박 · 조식 포함 · 날짜별 가능 여부는 확인 후 확정</p></details><button type="button" class="villa-request btn btn-outline" data-villa-request="coco-valley" aria-label="코코밸리 숙소 선택">이 숙소로 문의 <span aria-hidden="true">↗</span></button></div></article>
+<article class="villa-card" data-villa-id="sh-villa"><div class="villa-card-visual has-photo"><img src="assets/villas/sh-1.jpg" alt="SH" loading="lazy" decoding="async"></div><div class="villa-card-body"><span class="villa-card-kicker">앙헬레스 · 5룸 빌라</span><h3>SH</h3><p class="villa-price">1박 <strong>₱12,000</strong>부터</p><details class="villa-more"><summary>객실별 요금 · 사진</summary><div class="villa-gallery"><a href="assets/villas/sh-1.jpg"><img src="assets/villas/sh-1.jpg" alt="SH 사진 1" loading="lazy" decoding="async"></a><a href="assets/villas/sh-2.jpg"><img src="assets/villas/sh-2.jpg" alt="SH 사진 2" loading="lazy" decoding="async"></a><a href="assets/villas/sh-3.jpg"><img src="assets/villas/sh-3.jpg" alt="SH 사진 3" loading="lazy" decoding="async"></a><a href="assets/villas/sh-4.jpg"><img src="assets/villas/sh-4.jpg" alt="SH 사진 4" loading="lazy" decoding="async"></a><a href="assets/villas/sh-5.jpg"><img src="assets/villas/sh-5.jpg" alt="SH 사진 5" loading="lazy" decoding="async"></a></div><table class="villa-rates"><tbody><tr><th scope="row">5룸 빌라 · 3룸 사용</th><td>₱12,000</td></tr><tr><th scope="row">5룸 빌라 · 4룸 사용</th><td>₱16,000</td></tr><tr><th scope="row">5룸 빌라 · 5룸 사용</th><td>₱20,000</td></tr></tbody></table><p class="villa-rate-note">1박 · 사용하는 방 수 기준 · 날짜별 요금 변동 가능 · 날짜별 가능 여부는 확인 후 확정</p></details><button type="button" class="villa-request btn btn-outline" data-villa-request="sh-villa" aria-label="SH 숙소 선택">이 숙소로 문의 <span aria-hidden="true">↗</span></button></div></article>
+<article class="villa-card" data-villa-id="gold-villa"><div class="villa-card-visual has-photo"><img src="assets/villas/gold-1.jpg" alt="엠타운 골드" loading="lazy" decoding="async"></div><div class="villa-card-body"><span class="villa-card-kicker">4룸·5룸</span><h3>엠타운 골드</h3><p class="villa-price">1박 <strong>₱13,000</strong>부터</p><details class="villa-more"><summary>객실별 요금 · 사진</summary><div class="villa-gallery"><a href="assets/villas/gold-1.jpg"><img src="assets/villas/gold-1.jpg" alt="엠타운 골드 사진 1" loading="lazy" decoding="async"></a><a href="assets/villas/gold-2.jpg"><img src="assets/villas/gold-2.jpg" alt="엠타운 골드 사진 2" loading="lazy" decoding="async"></a><a href="assets/villas/gold-3.jpg"><img src="assets/villas/gold-3.jpg" alt="엠타운 골드 사진 3" loading="lazy" decoding="async"></a><a href="assets/villas/gold-4.jpg"><img src="assets/villas/gold-4.jpg" alt="엠타운 골드 사진 4" loading="lazy" decoding="async"></a><a href="assets/villas/gold-5.jpg"><img src="assets/villas/gold-5.jpg" alt="엠타운 골드 사진 5" loading="lazy" decoding="async"></a></div><table class="villa-rates"><tbody><tr><th scope="row">4룸</th><td>₱13,000</td></tr><tr><th scope="row">5룸</th><td>₱16,000</td></tr></tbody></table><p class="villa-rate-note">10월 말부터 성수기 · 1박 · 날짜별 가능 여부는 확인 후 확정</p></details><button type="button" class="villa-request btn btn-outline" data-villa-request="gold-villa" aria-label="엠타운 골드 숙소 선택">이 숙소로 문의 <span aria-hidden="true">↗</span></button></div></article></div><p class="catalog-footnote">표시 요금은 숙소 1채 1박 기준입니다. 날짜별 이용 가능 여부와 최종 금액은 문의 후 확인해 안내합니다. 다른 숙소도 인원·예산에 맞춰 추천해 드려요.</p><button type="button" class="text-button" data-service="villa">아직 못 골랐어요 · 인원에 맞는 숙소 추천받기 ↗</button></div>
  <div id="discovery-golf" role="tabpanel" aria-labelledby="tab-golf" tabindex="0" hidden><div id="golf" class="catalog-intro"><div><h3>희망 골프장을 알려주세요.</h3><p>이용일의 티타임과 숙소에서의 이동, 그린피·캐디·카트 포함 범위를 확인합니다.</p></div></div><div class="course-grid"><div class="course-card"><strong>미모사 (Mimosa)</strong><span>Clark Freeport</span></div><div class="course-card"><strong>코리아CC (FA Korea)</strong><span>Clark</span></div><div class="course-card"><strong>썬밸리 · 디하이츠</strong><span>Clark</span></div><div class="course-card"><strong>더비스타</strong><span>위치·이동 시간 상담 시 안내</span></div><div class="course-card"><strong>한리저브</strong><span>위치·이동 시간 상담 시 안내</span></div><div class="course-card"><strong>베버리</strong><span>Mexico, Pampanga</span></div><div class="course-card"><strong>프라데라</strong><span>Lubao, Pampanga</span></div></div><div class="catalog-action"><p>코스를 아직 정하지 않았다면 라운드 횟수부터 알려주세요.</p><button type="button" class="button button-dark" data-service="golf">골프 조건 선택하기 <span>↗</span></button></div></div>
  <div id="discovery-transfer" role="tabpanel" aria-labelledby="tab-transfer" tabindex="0" hidden><div class="transport-grid"><article id="service-transfer" class="transport-card"><span class="transport-symbol" aria-hidden="true">↗</span><h3>차량·공항 픽업</h3><p>공항 왕복부터 라운드·시내 이동까지.<br>인원과 짐, 필요한 구간에 맞춰 문의하세요.</p><ul><li>도착·출발 시간과 이동 구간</li><li>탑승 인원 · 캐리어 · 골프백</li><li>기사·유류·톨비·대기 포함 여부</li></ul><button type="button" class="button button-dark" data-service="transfer">차량·픽업 문의 <span>↗</span></button></article><article id="service-airport" class="transport-card"><span class="transport-symbol" aria-hidden="true">✧</span><h3>공항 VIP</h3><p>항공편과 이용 인원에 맞는 공항 서비스를 문의하세요.</p><ul><li>이용 공항 · 항공편 · 날짜</li><li>입국 또는 출국 · 이용 인원</li><li>지원 범위 · 만남 장소 · 취소 조건</li></ul><button type="button" class="button button-dark" data-service="airport">공항 VIP 문의 <span>↗</span></button></article></div></div>
 </section>
@@ -1713,6 +1744,103 @@ function buildConsultPayload(raw, { id, page = '' } = {}) {
   window.addEventListener('hashchange', fromHash);
   fromHash();
   render();
+})();
+
+// 풀빌라 사진 크게 보기: 새 창 대신 화면 위 팝업. ←/→ 키·버튼·좌우 밀기로 넘기고 Esc 로 닫는다.
+(() => {
+  'use strict';
+  if (typeof document.querySelectorAll !== 'function' || typeof document.createElement !== 'function') return; // 테스트용 가짜 화면
+  let cards;
+  try { cards = [...document.querySelectorAll('.villa-card')]; } catch { return; } // 테스트용 가짜 화면은 이 선택자를 모름
+  if (!cards.length || typeof cards[0].querySelectorAll !== 'function') return;
+
+  const box = document.createElement('div');
+  box.className = 'lb';
+  box.hidden = true;
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', '숙소 사진 크게 보기');
+  box.innerHTML = '<div class="lb-top"><span class="lb-title"></span><span class="lb-count" aria-live="polite"></span><button type="button" class="lb-close" aria-label="사진 닫기">×</button></div>'
+    + '<button type="button" class="lb-nav lb-prev" aria-label="이전 사진">‹</button>'
+    + '<figure class="lb-stage"><img class="lb-img" alt=""></figure>'
+    + '<button type="button" class="lb-nav lb-next" aria-label="다음 사진">›</button>'
+    + '<div class="lb-thumbs"></div>';
+  document.body.appendChild(box);
+  const img = box.querySelector('.lb-img');
+  const title = box.querySelector('.lb-title');
+  const count = box.querySelector('.lb-count');
+  const thumbs = box.querySelector('.lb-thumbs');
+  let photos = [], index = 0, opener = null;
+
+  function show(next) {
+    index = (next + photos.length) % photos.length;
+    img.src = photos[index];
+    img.alt = `${title.textContent} 사진 ${index + 1}`;
+    count.textContent = `${index + 1} / ${photos.length}`;
+    thumbs.querySelectorAll('button').forEach((button, i) => button.setAttribute('aria-current', i === index ? 'true' : 'false'));
+    // 다음 사진 미리 불러오기
+    if (photos.length > 1) new Image().src = photos[(index + 1) % photos.length];
+  }
+
+  function open(card, start) {
+    photos = [...card.querySelectorAll('.villa-gallery a')].map(a => a.getAttribute('href'));
+    if (!photos.length) { const cover = card.querySelector('.villa-card-visual img'); if (cover) photos = [cover.getAttribute('src')]; }
+    if (!photos.length) return;
+    title.textContent = card.querySelector('h3')?.textContent || '';
+    thumbs.innerHTML = photos.map((src, i) => `<button type="button" aria-label="${i + 1}번 사진"><img src="${src}" alt=""></button>`).join('');
+    thumbs.querySelectorAll('button').forEach((button, i) => button.addEventListener('click', () => show(i)));
+    box.classList.toggle('lb-single', photos.length < 2);
+    opener = document.activeElement;
+    box.hidden = false;
+    document.body.classList.add('consult-locked');
+    show(Math.max(0, start));
+    box.querySelector('.lb-close').focus();
+  }
+
+  function close() {
+    box.hidden = true;
+    img.removeAttribute('src');
+    document.body.classList.remove('consult-locked');
+    if (opener && typeof opener.focus === 'function') opener.focus();
+  }
+
+  cards.forEach(card => {
+    card.querySelectorAll('.villa-gallery a').forEach((link, i) => link.addEventListener('click', event => { event.preventDefault(); open(card, i); }));
+    const cover = card.querySelector('.villa-card-visual.has-photo');
+    if (cover) {
+      cover.setAttribute('role', 'button');
+      cover.setAttribute('tabindex', '0');
+      cover.setAttribute('aria-label', `${card.querySelector('h3')?.textContent || ''} 사진 크게 보기`);
+      cover.addEventListener('click', () => open(card, 0));
+      cover.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(card, 0); } });
+    }
+  });
+
+  box.querySelector('.lb-prev').addEventListener('click', () => show(index - 1));
+  box.querySelector('.lb-next').addEventListener('click', () => show(index + 1));
+  box.querySelector('.lb-close').addEventListener('click', close);
+  box.addEventListener('click', event => { if (event.target === box || event.target.classList.contains('lb-stage')) close(); });
+  window.addEventListener('keydown', event => {
+    if (box.hidden) return;
+    if (event.key === 'ArrowRight') { event.preventDefault(); show(index + 1); }
+    else if (event.key === 'ArrowLeft') { event.preventDefault(); show(index - 1); }
+    else if (event.key === 'Escape') { event.preventDefault(); close(); }
+    else if (event.key === 'Tab') { // 팝업 안에서만 이동
+      const items = [...box.querySelectorAll('button')];
+      const at = items.indexOf(document.activeElement);
+      event.preventDefault();
+      items[(at + (event.shiftKey ? -1 : 1) + items.length) % items.length].focus();
+    }
+  });
+  // 휴대폰: 좌우로 밀어서 넘기기
+  let startX = null, startY = 0;
+  box.addEventListener('touchstart', event => { startX = event.touches[0].clientX; startY = event.touches[0].clientY; }, { passive: true });
+  box.addEventListener('touchend', event => {
+    if (startX === null) return;
+    const dx = event.changedTouches[0].clientX - startX, dy = event.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
 })();
 
 })();</script>
