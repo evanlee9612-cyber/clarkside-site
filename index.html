@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-<head><link rel="preload" as="image" href="hero-m.jpg" media="(max-width:700px)"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#193e34">
+<head><script async data-analytics src="https://www.googletagmanager.com/gtag/js?id=G-FVWL85JRHG"></script><script data-analytics>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-FVWL85JRHG');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="pf.kakao.com"]');if(a)gtag('event','kakao_click',{link_url:a.href,click_place:a.id||a.getAttribute('data-place')||'link',page_path:location.pathname});},true);</script><link rel="preload" as="image" href="hero-m.jpg" media="(max-width:700px)"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#193e34">
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#193e34">
 <meta name="description" content="클락·앙헬레스 풀빌라 성수기 요금(1박 ₱16,000부터), 골프장 7곳 예약, 공항 픽업·렌트카(1일 ₱2,500부터), 호핑·요트·온천 액티비티, 환전·서류까지. 카카오톡 채널로 바로 상담하세요.">
@@ -1880,7 +1880,7 @@ function buildConsultPayload(raw, { id, page = '' } = {}) {
   }));
   const isPhone = () => window.matchMedia('(max-width: 900px)').matches || /Android|iPhone|iPad/i.test(navigator.userAgent);
   async function openKakao() {
-    if (settings.kakaoUrl && isPhone()) { window.location.href = settings.kakaoUrl; return; }
+    if (settings.kakaoUrl && isPhone()) { if (window.gtag) window.gtag('event', 'kakao_click', { click_place: 'consult-phone', page_path: location.pathname }); window.location.href = settings.kakaoUrl; return; }
     $('kk-preview').hidden = Boolean(settings.kakaoUrl);
     const open = $('kk-open');
     if (settings.kakaoUrl) { open.href = settings.kakaoUrl; open.removeAttribute('aria-disabled'); } else { open.removeAttribute('href'); open.setAttribute('aria-disabled', 'true'); }
@@ -1973,8 +1973,9 @@ function buildConsultPayload(raw, { id, page = '' } = {}) {
         fetch(settings.inquiryEndpoint, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) }).catch(() => {});
       } catch {}
     }
+    if (!repeat && window.gtag) window.gtag('event', 'generate_lead', { consult_id: id, page_path: location.pathname });
     lastSent = { key, id, at: repeat ? lastSent.at : Date.now() };
-    if (settings.kakaoUrl) window.open(settings.kakaoUrl, '_blank', 'noopener');
+    if (settings.kakaoUrl) { if (window.gtag) window.gtag('event', 'kakao_click', { click_place: 'consult-form', page_path: location.pathname }); window.open(settings.kakaoUrl, '_blank', 'noopener'); }
     showDone(id);
   });
 
