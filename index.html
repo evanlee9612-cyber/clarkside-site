@@ -404,6 +404,29 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
  .course-grid.swipe .course-card span{font-size:13px;margin-top:6px}
 }
 
+/* 이용 후기 (2026-10-27) */
+.reviews-section{background:#f6f3ec}
+.reviews-inner{display:grid;gap:22px}
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;align-items:start}
+.rv-card{background:#fffdf7;border:1px solid #dcd6c8;border-radius:18px;padding:18px 20px;display:grid;gap:10px;min-width:0;align-content:start}
+.rv-head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.rv-head strong{font-size:16px;color:#193e34}
+.rv-head span{font-size:13px;color:#6b736e}
+.rv-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start}
+.rv-chip{display:inline-block;line-height:1.6;font-size:12px;background:#e7efe9;color:#193e34;border-radius:999px;padding:2px 10px}
+.rv-text{margin:0;font-size:15px;line-height:1.7;color:#1f2a26;overflow-wrap:anywhere}
+.rv-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.rv-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block}
+.rv-foot{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:#6b736e}
+.rv-verified{color:#2f6f68;font-weight:600}
+.rv-verified::before{content:"✓ "}
+.rv-cta{margin:0;text-align:center;color:#6b736e}
+.rv-cta a{color:#193e34;font-weight:700}
+@media(max-width:700px){.rv-card{padding:16px}}
+.rv-stars{color:#c98a12;letter-spacing:2px;font-size:15px}
+.rv-avg{margin:0;font-size:15px;color:#1f2a26}
+.rv-avg b{font-size:20px;color:#193e34}
+
 /* 풀빌라: 카드는 간단히, 자세한 사진·요금은 눌러서 뜨는 상세 화면에서 */
 .villa-more{display:none}
 .villa-open{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:46px;border:0;border-top:1px solid var(--line);background:none;font:inherit;font-size:15px;font-weight:600;color:var(--forest);cursor:pointer;padding:0;margin-bottom:6px}
@@ -537,6 +560,10 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 .perk b{color:#193e34}
 .perk small{flex-basis:100%;font-size:12.5px;color:#6b6650}
 .perk-hero{background:rgba(255,247,209,.95);max-width:520px}
+/* 메인 화면 혜택은 한 줄로 (Evan 10/27: 큰 상자가 별로). 자세한 조건은 상담 칸·차량 칸 */
+.perk-line{margin:16px 0 0;font-size:15px;font-weight:600;color:#f3e7a8;letter-spacing:.01em}
+.perk-line span{margin-right:4px}
+@media(max-width:600px){.perk-line{font-size:14px}}
 @media(max-width:600px){.perk{font-size:14px;padding:9px 13px}}
 .quote-example{margin:28px auto 8px;max-width:560px}
 .quote-example img{width:100%;height:auto;border-radius:18px;display:block;box-shadow:0 8px 28px rgba(25,62,52,.10)}
@@ -554,7 +581,7 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 <main id="home">
  <section class="hero" aria-labelledby="hero-title">
   <div class="hero-image"></div><div class="hero-shade"></div>
-  <div class="hero-copy"><p class="eyebrow light">CLARK, AT YOUR OWN PACE</p><h1 id="hero-title">함께 가는 여행,<br>준비는 가볍게.</h1><p class="hero-description">풀빌라, 골프, 차량, 공항 VIP까지.<br>필요한 것만 골라 현지 담당자와 준비하세요.</p><div class="hero-actions"><a class="button button-lime" href="#consult">카톡으로 바로 상담하기 <span>↗</span></a><a class="button hero-ghost" href="#villas">풀빌라 요금 보기</a></div><p class="perk perk-hero"><b>공항 픽업 무료 혜택</b> 렌트카(기사 포함) 이용 시 클락공항 픽업·샌딩 왕복 무료 · 풀빌라 2박 이상 예약 시 픽업 편도 무료<small>카카오톡 상담 후 예약 시 · 승합 밴 1대 기준</small></p><p class="hero-caption">PHILIPPINES · CLARK & ANGELES</p></div>
+  <div class="hero-copy"><p class="eyebrow light">CLARK, AT YOUR OWN PACE</p><h1 id="hero-title">함께 가는 여행,<br>준비는 가볍게.</h1><p class="hero-description">풀빌라, 골프, 차량, 공항 VIP까지.<br>필요한 것만 골라 현지 담당자와 준비하세요.</p><div class="hero-actions"><a class="button button-lime" href="#consult">카톡으로 바로 상담하기 <span>↗</span></a><a class="button hero-ghost" href="#villas">풀빌라 요금 보기</a></div><p class="perk-line"><span aria-hidden="true">✈</span> 렌트카 이용 시 공항 픽업·샌딩 무료</p><p class="hero-caption">PHILIPPINES · CLARK & ANGELES</p></div>
   <a class="hero-picks" href="#villas" aria-label="이번 시즌 풀빌라 요금 보기"><span class="hero-picks-head"><span>THIS SEASON · 풀빌라</span><span class="pill">2026.11–2027.03</span></span><span class="hero-pick"><img src="assets/villas/coco-cover.jpg" alt="" loading="eager"><span><b>코코밸리</b><small>1박 ₱18,000부터</small></span></span><span class="hero-pick"><img src="assets/villas/sh-cover.jpg" alt="" loading="eager"><span><b>SH</b><small>1박 ₱18,000부터</small></span></span><span class="hero-pick"><img src="assets/villas/gold-cover.jpg" alt="" loading="eager"><span><b>엠타운 골드</b><small>1박 ₱16,000부터</small></span></span><span class="hero-pick"><img src="assets/villas/xi-cover.jpg" alt="" loading="eager"><span><b>자이(XI) 풀빌라</b><small>1박 ₱19,000부터</small></span></span><span class="hero-picks-foot">객실별 요금·사진 보기 <span>↗</span></span></a>
   <div class="hero-quote" hidden><div class="hero-quote-head"><span>YOUR TRIP, AT A GLANCE</span><span class="pill">맞춤 여행</span></div><p id="hero-summary">필요한 서비스를 선택해 주세요</p><div class="hero-price"><small>요금 안내</small><strong id="hero-price">조건 확인 후</strong></div><div class="hero-quote-bottom"><span>희망 조건을 정리해 문의하세요</span><a href="#planner" aria-label="여행 조건 선택으로 이동">↗</a></div></div>
  </section>
@@ -572,6 +599,7 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
  <div id="discovery-transfer" role="tabpanel" aria-labelledby="tab-transfer" tabindex="0" hidden><div class="vehicle-rates"><div class="catalog-intro"><div><h3>차량 요금</h3><p>기사 포함 · 1일(12시간) 기준</p></div></div><div class="vehicle-grid"><button type="button" class="vehicle-card has-photo" data-vehicle="중형 승합 밴 11~12인승"><figure class="course-photo"><img src="assets/vehicle/hiace.jpg" alt="중형 승합 밴 사진" loading="lazy" decoding="async" width="1200" height="800"></figure><span class="vehicle-body"><span class="vehicle-seats">11~12인승</span><strong>중형 승합 밴</strong><small class="vehicle-models">토요타 그랑디아 하이에이스</small><span class="vehicle-capacity">최대 8인 · 골퍼 6인</span><span class="vehicle-price">₱2,500</span><em>상담에 담기 +</em></span></button><button type="button" class="vehicle-card has-photo" data-vehicle="대형 승합 밴 14~15인승"><figure class="course-photo"><img src="assets/vehicle/large.jpg" alt="대형 승합 밴 사진" loading="lazy" decoding="async" width="1200" height="800"></figure><span class="vehicle-body"><span class="vehicle-seats">14~15인승</span><strong>대형 승합 밴</strong><small class="vehicle-models">토요타 커뮤터 디럭스 · 그랑디아 GL · 닛산 NV350</small><span class="vehicle-capacity">최대 10인 · 골퍼 7인</span><span class="vehicle-price">₱3,000</span><em>상담에 담기 +</em></span></button><button type="button" class="vehicle-card has-photo" data-vehicle="솔라티 대형 승합 14인승"><figure class="course-photo"><img src="assets/vehicle/solati.jpg" alt="솔라티 대형 승합 사진" loading="lazy" decoding="async" width="1200" height="800"></figure><span class="vehicle-body"><span class="vehicle-seats">14인승</span><strong>솔라티 대형 승합</strong><small class="vehicle-models">현대 솔라티</small><span class="vehicle-capacity">최대 12인 · 골퍼 8인</span><span class="vehicle-price">₱3,500</span><em>상담에 담기 +</em></span></button></div><p class="vehicle-note">유류비·톨비·기사 식대(1일 ₱300)는 별도입니다. 캐리어·골프백이 많으면 일부 좌석을 접어 짐을 싣기 때문에 최대 인원이 줄어듭니다.</p></div><div class="transport-grid"><article id="service-transfer" class="transport-card"><span class="transport-symbol" aria-hidden="true">↗</span><h3>차량·공항 픽업</h3><p>공항 왕복부터 라운드·시내 이동까지.<br>인원과 짐, 필요한 구간에 맞춰 문의하세요.</p><ul><li>도착·출발 시간과 이동 구간</li><li>탑승 인원 · 캐리어 · 골프백</li><li>대기 시간 · 추가 이동 구간</li></ul><button type="button" class="button button-dark" data-service="transfer">차량·픽업 문의 <span>↗</span></button></article><article id="service-airport" class="transport-card"><span class="transport-symbol" aria-hidden="true">✧</span><h3>공항 VIP</h3><p>항공편과 이용 인원에 맞는 공항 서비스를 문의하세요.</p><ul><li>이용 공항 · 항공편 · 날짜</li><li>입국 또는 출국 · 이용 인원</li><li>지원 범위 · 만남 장소 · 취소 조건</li></ul><button type="button" class="button button-dark" data-service="airport">공항 VIP 문의 <span>↗</span></button></article></div></div>
 </section>
 
+ 
 
 
  <section id="consult" class="consult-section" aria-labelledby="consult-title"><div class="section consult-inner">
