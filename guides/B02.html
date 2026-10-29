@@ -411,6 +411,15 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 .rv-stars{color:#c98a12;letter-spacing:2px;font-size:15px}
 .rv-avg{margin:0;font-size:15px;color:#1f2a26}
 .rv-avg b{font-size:20px;color:#193e34}
+/* 후기가 많을 때 (10/29): PC는 8개만 보이고 '더 보기'로 펼침, 휴대폰은 옆으로 넘기기 */
+.rv-grid:not(.rv-open)>.rv-more{display:none}
+.rv-toggle{justify-self:center;border:1.5px solid #c9d2c6;background:#fffdf7;color:#193e34;font-weight:700;font-size:15px;border-radius:999px;padding:11px 26px;cursor:pointer}
+.rv-toggle:hover{background:#e7efe9}
+@media(max-width:600px){
+ .rv-grid.swipe>.rv-more{display:grid}
+ .rv-grid.swipe+.swipe-bar+.rv-toggle{display:none}
+ .rv-grid.swipe .rv-card{align-content:start}
+}
 
 /* 풀빌라: 카드는 간단히, 자세한 사진·요금은 눌러서 뜨는 상세 화면에서 */
 .villa-more{display:none}
