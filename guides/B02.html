@@ -568,4 +568,71 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 
 /* 10/29: 휴대폰에서 밝은 수영장 사진 위 '공항 픽업 무료' 줄이 안 읽힘 → 그림자·반투명 바탕 */
 @media(max-width:600px){.perk-line{display:inline-block;padding:6px 10px;border-radius:6px;background:rgba(18,40,32,.55);text-shadow:0 1px 2px rgba(0,0,0,.5)}}
+/* 10/31: 휴대폰에서 약속 띠 글자가 화면 왼쪽 끝에 붙던 문제(위 padding:30px 0 이 휴대폰 여백 5%를 덮음) */
+@media(max-width:700px){.promise-strip{padding:22px 5%}}
+
+/* 대표 상품 섹션 (2026-10-29) */
+.pk-section{background:#fff;border-top:1px solid var(--line)}
+.pk-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pk-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pk-photo{position:relative;margin:0;flex:none;aspect-ratio:16/10;background:#e8ece4;overflow:hidden}
+.pk-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.pk-code{position:absolute;left:12px;top:12px;background:var(--forest);color:#fff;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px}
+.pk-body{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px;flex:1}
+.pk-tag{font-size:13px;font-weight:700;color:#6c7f5f}
+.pk-body h3{font-size:18px;line-height:1.4;font-weight:700;color:var(--forest);margin:0}
+.pk-facts{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:2px 0 0;padding:0}
+.pk-facts li{font-size:12.5px;background:#f1f4ee;color:#4c5d52;border-radius:6px;padding:3px 8px}
+.pk-blurb{font-size:14px;color:#56635a;line-height:1.6;margin:2px 0 0}
+.pk-price{display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.pk-price small{font-size:13px;color:var(--muted)}
+.pk-price strong{font-size:24px;color:var(--forest);font-variant-numeric:tabular-nums}
+.pk-price span{font-size:14px;font-weight:600;color:#7a6a3c}
+.pk-split{font-size:13px;color:#4c5d52;margin:0;line-height:1.5;font-variant-numeric:tabular-nums}.pk-split small{color:var(--muted);margin-left:3px}
+.pk-basis{font-size:12.5px;color:var(--muted);margin:0;line-height:1.5}
+.pk-more{border:1px solid var(--line);border-radius:8px;font-size:14px}
+.pk-more summary{cursor:pointer;padding:9px 12px;font-weight:600;color:var(--forest);list-style:none}
+.pk-more summary::after{content:'+';float:right;color:var(--muted)}
+.pk-more[open] summary::after{content:'−'}
+.pk-inc,.pk-days{padding:0 12px 12px;margin:0}
+.pk-inc b{display:block;font-size:13px;margin:6px 0 4px}
+.pk-inc ul{margin:0;padding-left:18px;color:#4c5d52;line-height:1.6}
+.pk-inc ul.pk-exc{color:#8a6d6d}
+.pk-days{padding-left:30px;line-height:1.6;color:#4c5d52}
+.pk-ask{justify-content:center;margin-top:4px}
+.pk-table-wrap{margin-top:44px}
+.pk-table-wrap h3,.pk-steps h3{font-size:20px;font-weight:700;color:var(--forest);margin:0 0 6px}
+.pk-table-note{font-size:13px;color:var(--muted);margin:6px 0;line-height:1.6}
+.pk-scroll{overflow-x:auto}
+.pk-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin:10px 0 4px;min-width:420px}
+.pk-table th,.pk-table td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+.pk-table thead th{font-size:14px;color:var(--forest);background:#f6f8f3}
+.pk-table small{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:2px}
+.pk-table td b{font-size:18px;color:var(--forest)}
+.pk-table tbody th{font-size:16px;color:var(--ink)}
+.pk-steps{margin-top:44px}
+.pk-steps ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;list-style:none;padding:0;margin:14px 0 0}
+.pk-steps li{background:#f6f8f3;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.pk-step-no{width:28px;height:28px;border-radius:50%;background:var(--forest);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+.pk-steps b{font-size:15.5px;color:var(--forest)}
+.pk-steps small{font-size:13px;color:#56635a;line-height:1.55}
+@media(max-width:1100px){.pk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pk-steps ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){
+ .pk-steps ol{grid-template-columns:1fr}
+ .pk-steps li{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:10px}
+ .pk-steps small{flex-basis:100%}
+ .pk-grid.swipe .pk-card{height:auto}
+ .pk-price strong{font-size:22px}
+ .pk-table{min-width:0}
+ .pk-table th,.pk-table td{padding:10px 8px}
+ .pk-table td b{font-size:16px}
+ .pk-table tbody th{font-size:15px}
+}
+/* 골프장 그린피 표 (2026-10-31) */
+.gf-wrap{margin:28px 0 8px}
+.gf-wrap h3{font-size:20px;font-weight:700;color:var(--forest);margin:0 0 6px}
+.gf-table td{white-space:nowrap}
+.gf-table td.gf-extra{color:var(--muted);font-weight:600}
+.gf-notes{margin:10px 0 0;padding-left:18px;font-size:13.5px;color:#56635a;line-height:1.7}
+@media(max-width:600px){.gf-table th,.gf-table td{padding:10px 6px}.gf-table td b{font-size:15px}.gf-table tbody th{font-size:14px}.gf-table td.gf-extra{font-size:13px}}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">객실 배정 · B02</p><h1>클락 풀빌라 방 배정, 인원별 침실·침대 구성 확인법</h1><p>클락 풀빌라는 침실 수와 침대 수가 다릅니다. 6명·8명 일행이라면 동실·침대 공유·독실 희망부터 맞춰보세요.</p><h2 style="font-size:19px;margin:30px 0 12px">잠자리 조건부터 묻기</h2><p>같은 방을 쓰는 것과 같은 침대를 쓰는 것은 다른 조건입니다. 각자 침대가 필요한지, 독실을 원하는지, 함께 방을 써도 되는 상대가 누구인지 먼저 확인하세요. 가족이나 커플이어도 침대 공유를 자동으로 전제하지 않으면 예약 직전에 구성을 바꾸는 일을 줄일 수 있습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">인원과 침대 구성을 같이 보기</h2><p>성인 6명이 2인실 3개를 쓴다는 계획은 객실마다 어떤 침대가 있는지에 따라 달라집니다. 1인용 침대 2개인지 큰 침대 1개인지 구분하세요. 소파나 추가 침구를 잠자리로 계산하려면 실제 이용 가능 여부와 정원, 추가 비용에 대한 숙소의 답변이 필요합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">독실이 생기면 다시 배정하기</h2><p>독실 희망자가 생기면 남은 사람의 방도 다시 나눠야 합니다. 기존 객실 수를 유지하려고 3인 이용을 임의로 넣지 말고 허용 정원과 침대 구성을 확인하세요. 개인 희망에 따른 객실 추가분을 누가 부담할지도 일행끼리 정하면 총무가 견적을 설명하기 쉬워집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">일행 합의와 숙소 확정 구분하기</h2><p>배정표에는 객실, 이용자, 침대 유형과 확인 상태를 함께 적으세요. 풀빌라는 침실별 침대와 욕실 위치, 계단도 살펴보면 좋습니다. 일행이 원하는 배정이 정해져도 숙소가 제공할 수 있는지는 별도 확인입니다. 이름 대신 A·B로 시작해도 충분합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">함께 보면 좋은 클락사이드 블로그 글</h2><ul><li><a href="https://blog.naver.com/clarksideph/224449190096" target="_blank" rel="noopener">클락 6인 풀빌라, 각방 배정은 침실 수부터 ↗</a></li><li><a href="https://blog.naver.com/clarksideph/224450932444" target="_blank" rel="noopener">클락 풀빌라 코코밸리, 8~12명 단체 숙소 요금 ↗</a></li></ul><p style="margin-top:24px"><a class="button button-dark" href="https://pf.kakao.com/_YxcNmX/chat" target="_blank" rel="noopener" data-place="guide-kakao">카카오톡 채널로 바로 상담하기 ↗</a></p><p><a href="../index.html#inquiry=B02">이 글의 조건으로 문의 내용 정리하기 ↗</a></p></article><a class="guide-back" href="../index.html#plan=B02">우리 일행 객실 배정해보기 ↗</a></main></body></html>

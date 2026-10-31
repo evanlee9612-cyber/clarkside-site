@@ -568,4 +568,71 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 
 /* 10/29: 휴대폰에서 밝은 수영장 사진 위 '공항 픽업 무료' 줄이 안 읽힘 → 그림자·반투명 바탕 */
 @media(max-width:600px){.perk-line{display:inline-block;padding:6px 10px;border-radius:6px;background:rgba(18,40,32,.55);text-shadow:0 1px 2px rgba(0,0,0,.5)}}
+/* 10/31: 휴대폰에서 약속 띠 글자가 화면 왼쪽 끝에 붙던 문제(위 padding:30px 0 이 휴대폰 여백 5%를 덮음) */
+@media(max-width:700px){.promise-strip{padding:22px 5%}}
+
+/* 대표 상품 섹션 (2026-10-29) */
+.pk-section{background:#fff;border-top:1px solid var(--line)}
+.pk-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pk-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pk-photo{position:relative;margin:0;flex:none;aspect-ratio:16/10;background:#e8ece4;overflow:hidden}
+.pk-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.pk-code{position:absolute;left:12px;top:12px;background:var(--forest);color:#fff;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px}
+.pk-body{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px;flex:1}
+.pk-tag{font-size:13px;font-weight:700;color:#6c7f5f}
+.pk-body h3{font-size:18px;line-height:1.4;font-weight:700;color:var(--forest);margin:0}
+.pk-facts{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:2px 0 0;padding:0}
+.pk-facts li{font-size:12.5px;background:#f1f4ee;color:#4c5d52;border-radius:6px;padding:3px 8px}
+.pk-blurb{font-size:14px;color:#56635a;line-height:1.6;margin:2px 0 0}
+.pk-price{display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.pk-price small{font-size:13px;color:var(--muted)}
+.pk-price strong{font-size:24px;color:var(--forest);font-variant-numeric:tabular-nums}
+.pk-price span{font-size:14px;font-weight:600;color:#7a6a3c}
+.pk-split{font-size:13px;color:#4c5d52;margin:0;line-height:1.5;font-variant-numeric:tabular-nums}.pk-split small{color:var(--muted);margin-left:3px}
+.pk-basis{font-size:12.5px;color:var(--muted);margin:0;line-height:1.5}
+.pk-more{border:1px solid var(--line);border-radius:8px;font-size:14px}
+.pk-more summary{cursor:pointer;padding:9px 12px;font-weight:600;color:var(--forest);list-style:none}
+.pk-more summary::after{content:'+';float:right;color:var(--muted)}
+.pk-more[open] summary::after{content:'−'}
+.pk-inc,.pk-days{padding:0 12px 12px;margin:0}
+.pk-inc b{display:block;font-size:13px;margin:6px 0 4px}
+.pk-inc ul{margin:0;padding-left:18px;color:#4c5d52;line-height:1.6}
+.pk-inc ul.pk-exc{color:#8a6d6d}
+.pk-days{padding-left:30px;line-height:1.6;color:#4c5d52}
+.pk-ask{justify-content:center;margin-top:4px}
+.pk-table-wrap{margin-top:44px}
+.pk-table-wrap h3,.pk-steps h3{font-size:20px;font-weight:700;color:var(--forest);margin:0 0 6px}
+.pk-table-note{font-size:13px;color:var(--muted);margin:6px 0;line-height:1.6}
+.pk-scroll{overflow-x:auto}
+.pk-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin:10px 0 4px;min-width:420px}
+.pk-table th,.pk-table td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}
+.pk-table thead th{font-size:14px;color:var(--forest);background:#f6f8f3}
+.pk-table small{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:2px}
+.pk-table td b{font-size:18px;color:var(--forest)}
+.pk-table tbody th{font-size:16px;color:var(--ink)}
+.pk-steps{margin-top:44px}
+.pk-steps ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;list-style:none;padding:0;margin:14px 0 0}
+.pk-steps li{background:#f6f8f3;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.pk-step-no{width:28px;height:28px;border-radius:50%;background:var(--forest);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+.pk-steps b{font-size:15.5px;color:var(--forest)}
+.pk-steps small{font-size:13px;color:#56635a;line-height:1.55}
+@media(max-width:1100px){.pk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pk-steps ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){
+ .pk-steps ol{grid-template-columns:1fr}
+ .pk-steps li{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:10px}
+ .pk-steps small{flex-basis:100%}
+ .pk-grid.swipe .pk-card{height:auto}
+ .pk-price strong{font-size:22px}
+ .pk-table{min-width:0}
+ .pk-table th,.pk-table td{padding:10px 8px}
+ .pk-table td b{font-size:16px}
+ .pk-table tbody th{font-size:15px}
+}
+/* 골프장 그린피 표 (2026-10-31) */
+.gf-wrap{margin:28px 0 8px}
+.gf-wrap h3{font-size:20px;font-weight:700;color:var(--forest);margin:0 0 6px}
+.gf-table td{white-space:nowrap}
+.gf-table td.gf-extra{color:var(--muted);font-weight:600}
+.gf-notes{margin:10px 0 0;padding-left:18px;font-size:13.5px;color:#56635a;line-height:1.7}
+@media(max-width:600px){.gf-table th,.gf-table td{padding:10px 6px}.gf-table td b{font-size:15px}.gf-table tbody th{font-size:14px}.gf-table td.gf-extra{font-size:13px}}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">단체여행 총무 · B13</p><h1>클락 단체 골프여행 총무, 1인 정산·공유 견적 정리법</h1><p>클락 단체 골프여행은 팀 총액, 개인별 선택, 객실 배정을 같은 기준으로 정리하면 일행과의 의사결정이 쉬워집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">첫 화면은 여행 조건과 총액</h2><p>여행 날짜, 전체 인원, 객실 구성, 골프 참여 인원과 작성일을 먼저 적으세요. 그 아래에 예약대금, 현지 별도 비용과 아직 확인하지 못한 항목을 나눠 표시합니다. 포함 범위를 읽을 수 있어야 일행도 단순한 1인 가격보다 무엇에 돈을 쓰는지 이해하기 쉽습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">공동비와 개인 선택을 나누기</h2><p>숙소나 공동 차량은 일행이 합의한 기준으로 나누고, 개인 골프나 추가 서비스는 이용자에게 배정하세요. 일부만 골프를 친다면 그 비용을 전원에게 같은 비율로 나누기 전에 합의가 필요합니다. 독실이나 숙박 기간 차이가 있을 때도 개인 추가분을 따로 적으면 정산이 편합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">객실 배정은 확인 상태까지</h2><p>방별 이용자와 침대 구성을 함께 적고, 일행 협의 중인 배정과 숙소에서 확인한 구성을 구분하세요. 정원에 맞아도 잠자리 방식이 다를 수 있습니다. 넓게 공유하는 문서에는 불필요한 연락처나 계좌번호를 빼고, 이름 대신 별칭을 사용해도 충분합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">바뀐 조건은 같은 문서에 남기기</h2><p>인원이나 날짜, 골프 일정이 바뀌면 변경일과 이유를 남기세요. 받은 돈, 여행사에 전달한 돈과 남은 납부액도 구분해 기록합니다. 견적 공유는 예약 확정과 다르므로 최종 조건과 결제 안내를 확인한 뒤 일행에게 알려주세요. 최신본의 제목과 작성일도 맞춰두면 좋습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">함께 보면 좋은 클락사이드 블로그 글</h2><ul><li><a href="https://blog.naver.com/clarksideph/224449188636" target="_blank" rel="noopener">클락 골프 4인 총비용, 3박·54홀 견적 비교 ↗</a></li><li><a href="https://blog.naver.com/clarksideph/224450941381" target="_blank" rel="noopener">클락 풀빌라 가격 비교, 엠타운 골드 4룸 ↗</a></li></ul><p style="margin-top:24px"><a class="button button-dark" href="https://pf.kakao.com/_YxcNmX/chat" target="_blank" rel="noopener" data-place="guide-kakao">카카오톡 채널로 바로 상담하기 ↗</a></p><p><a href="../index.html#inquiry=B13">이 글의 조건으로 문의 내용 정리하기 ↗</a></p></article><a class="guide-back" href="../index.html#plan=B13">총무용 공유 견적 만들기 ↗</a></main></body></html>
