@@ -677,7 +677,7 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit
 .cs-shot{position:relative;margin-top:44px;border-radius:28px;overflow:hidden;aspect-ratio:21/9;background:var(--sage)}
 .cs-shot img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
 .cs-badge{position:absolute;right:36px;top:36px;width:158px;height:158px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 14px 34px #0f3a2e40}
-.cs-badge b{font:800 33px/1 var(--num);letter-spacing:-.02em}.cs-badge span{font-size:13px;font-weight:700;margin-top:6px}
+.cs-badge b{font:800 33px/1 var(--sans);letter-spacing:-.02em}.cs-badge span{font-size:13px;font-weight:700;margin-top:6px}
 .cs-tags{position:absolute;left:24px;bottom:24px;display:flex;gap:8px;flex-wrap:wrap}
 .cs-tags span{background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;color:var(--ink)}
 .cs-cap{position:absolute;right:20px;bottom:18px;color:#fff;font-size:12px;opacity:.9;text-shadow:0 1px 4px #0008}
@@ -697,7 +697,7 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit
 .cs-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cs-svc a{display:block;background:var(--paper);border-radius:22px;padding:28px 28px 26px;border-top:5px solid var(--coral);color:inherit;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .cs-svc a:hover{transform:translateY(-3px);box-shadow:0 18px 40px #0f3a2e14}
-.cs-svc .n{font:800 30px/1 var(--num);color:var(--coral)}
+.cs-svc .n{font:800 30px/1 var(--sans);color:var(--coral)}
 .cs-svc h3{font-size:21px;margin:14px 0 8px;font-weight:800;letter-spacing:-.03em}
 .cs-svc p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
 .cs-svc strong{color:var(--ink)}
@@ -732,14 +732,14 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit
 .pk-facts li{background:none!important;padding:0!important;border-radius:0!important;color:var(--muted)!important;font-size:13.5px!important}
 .pk-facts li+li::before{content:"·";margin:0 7px;color:#b9b2a2}
 .pk-tag{color:var(--coral)!important}
-.pk-price b,.pk-price strong{font-family:var(--num);font-weight:800;color:var(--forest);letter-spacing:-.02em}
+.pk-price b,.pk-price strong{font-family:var(--sans);font-weight:800;color:var(--forest);letter-spacing:-.02em}
 .pk-ask,.button-dark{background:var(--forest)!important;color:#fff!important;border-radius:999px!important;border:0!important}
 .pk-ask:hover,.button-dark:hover{background:var(--coral)!important}
 .button-lime,.button.button-lime{background:var(--coral)!important;color:#fff!important;border-color:var(--coral)!important;border-radius:999px}
 .button-outline,.btn-outline{border-color:var(--ink)!important;color:var(--ink)!important;border-radius:999px!important}
 .discovery-tabs [role=tab],.discovery-tabs button{border-radius:999px}
 .discovery-tabs [aria-selected=true]{background:var(--forest)!important;color:#fff!important}
-.villa-price b,.villa-price strong{font-family:var(--num);font-weight:800;color:var(--forest)}
+.villa-price b,.villa-price strong{font-family:var(--sans);font-weight:800;color:var(--forest)}
 .course-card strong,.villa-card h3{font-weight:800;letter-spacing:-.03em}
 .consult-card{border-radius:28px!important;border:0!important}
 .c-chip input:checked+span{background:var(--forest)!important;color:#fff!important;border-color:var(--forest)!important}
@@ -751,7 +751,7 @@ details summary{cursor:pointer}
 .cs-promise{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:40px 0 56px}
 .cs-promise div{padding:26px 22px 26px 0}
 .cs-promise div+div{padding-left:22px;border-left:1px solid var(--line)}
-.cs-promise b{display:block;font:800 40px/1.1 var(--num);color:var(--forest)}
+.cs-promise b{display:block;font:800 40px/1.1 var(--sans);color:var(--forest)}
 .cs-promise span{color:var(--muted);font-size:15px}
 .cs-end{background:var(--coral);color:#fff;border-radius:32px;padding:60px 64px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
 .cs-end h2{color:#fff;margin:0;font-size:clamp(28px,3.4vw,44px)}.cs-end p{margin:10px 0 0;opacity:.92}
@@ -786,4 +786,8 @@ footer .brand [data-brand-english]{font-family:var(--num);text-transform:none}
 /* 11/5 Evan: '이 숙소로 문의' 글자가 왼쪽 아래로 쏠림 → 예전 줄 버튼(위 줄·왼쪽 정렬) 스타일을 지우고 가운데 정렬 알약 버튼으로 */
 .villa-card-body .villa-request{justify-content:center;gap:6px;text-align:center;padding:0 16px;border:1px solid var(--ink);margin-top:auto;min-height:46px;font-weight:600}
 .villa-card-body .villa-request:hover{background:var(--ink);color:var(--cream)!important}
+/* 11/5 Evan "글씨체가 이상한 부분" → 장식 글꼴(Fraunces)은 로고 CLARKSIDE·C만. 가격·번호·숫자 띠·로고 아래 작은 글씨는 본문 글꼴로 */
+.cs-badge b,.cs-svc .n,.pk-price b,.pk-price strong,.villa-price b,.villa-price strong,.cs-promise b{font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.brand small,.cs-logo small,footer .brand small{font-family:var(--sans)!important}
+footer .brand small{letter-spacing:0!important;text-transform:none!important;font-size:12px!important}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">골프 준비 · B05</p><h1>클락 골프 견적, 그린피 말고 캐디·카트·차량까지 확인</h1><p>클락 골프장 견적은 그린피만으로 비교하기 어렵습니다. 카트·캐디·이동·장비 포함 범위를 확인하면 현지 예산이 또렷해집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">라운드 조건부터 나란히 놓기</h2><p>골프장, 희망 날짜, 인원, 홀 수와 시간대를 같은 기준으로 맞추세요. 골프 2회라는 문장만으로는 라운드 조건을 비교하기 어렵습니다. 원하는 시간과 확정된 티타임도 구분하고, 특정 골프장이 우선이라면 바꿀 수 있는 날짜나 시간 범위도 함께 정해두세요.</p><h2 style="font-size:19px;margin:30px 0 12px">포함·별도·미확인 표시하기</h2><p>카트와 캐디의 포함 여부뿐 아니라 이용 기준과 배정 방식까지 확인하세요. 팁도 인터넷에서 본 금액을 모든 골프장의 고정 비용으로 넣지 말고 해당 예약의 안내를 받아야 합니다. 항목마다 포함, 별도, 해당 없음, 미확인으로 표시하면 빠진 비용을 찾기 쉽습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">이동과 장비까지 범위 맞추기</h2><p>숙소와 골프장 사이 왕복 차량이 들어 있는지, 식사나 다른 장소 경유도 가능한지 확인하세요. 장비를 빌릴 계획이라면 필요한 규격과 대여 가능 여부, 비용과 보증 조건을 물어보면 좋습니다. 락커나 연습 시설, 식음료도 이용할 계획이 있으면 비교 항목에 넣으세요.</p><h2 style="font-size:19px;margin:30px 0 12px">날씨와 일정 변경 조건 받기</h2><p>세금·예약 수수료, 취소·변경과 우천 시 처리 조건까지 확인해야 비교가 끝납니다. 환불이나 일정 변경이 된다고 미리 가정하지 마세요. 문의에는 여행 날짜, 인원, 희망 횟수와 시간대, 장비 필요 여부를 적고, 대체 골프장도 괜찮은지 함께 알려주세요.</p><h2 style="font-size:19px;margin:30px 0 12px">함께 보면 좋은 클락사이드 블로그 글</h2><ul><li><a href="https://blog.naver.com/clarksideph/224449806309" target="_blank" rel="noopener">클락 2인 골프 예약, 조인·단독 라운드 확인법 ↗</a></li><li><a href="https://blog.naver.com/clarksideph/224449188636" target="_blank" rel="noopener">클락 골프 4인 총비용, 3박·54홀 견적 비교 ↗</a></li></ul><p style="margin-top:24px"><a class="button button-dark" href="https://pf.kakao.com/_YxcNmX/chat" target="_blank" rel="noopener" data-place="guide-kakao">카카오톡 채널로 바로 상담하기 ↗</a></p><p><a href="../index.html#inquiry=B05">이 글의 조건으로 문의 내용 정리하기 ↗</a></p></article><a class="guide-back" href="../index.html#plan=B05">골프 포함 총비용 살펴보기 ↗</a></main></body></html>

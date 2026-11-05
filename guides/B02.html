@@ -677,7 +677,7 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit
 .cs-shot{position:relative;margin-top:44px;border-radius:28px;overflow:hidden;aspect-ratio:21/9;background:var(--sage)}
 .cs-shot img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
 .cs-badge{position:absolute;right:36px;top:36px;width:158px;height:158px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 14px 34px #0f3a2e40}
-.cs-badge b{font:800 33px/1 var(--num);letter-spacing:-.02em}.cs-badge span{font-size:13px;font-weight:700;margin-top:6px}
+.cs-badge b{font:800 33px/1 var(--sans);letter-spacing:-.02em}.cs-badge span{font-size:13px;font-weight:700;margin-top:6px}
 .cs-tags{position:absolute;left:24px;bottom:24px;display:flex;gap:8px;flex-wrap:wrap}
 .cs-tags span{background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;color:var(--ink)}
 .cs-cap{position:absolute;right:20px;bottom:18px;color:#fff;font-size:12px;opacity:.9;text-shadow:0 1px 4px #0008}
@@ -697,7 +697,7 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit
 .cs-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .cs-svc a{display:block;background:var(--paper);border-radius:22px;padding:28px 28px 26px;border-top:5px solid var(--coral);color:inherit;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .cs-svc a:hover{transform:translateY(-3px);box-shadow:0 18px 40px #0f3a2e14}
-.cs-svc .n{font:800 30px/1 var(--num);color:var(--coral)}
+.cs-svc .n{font:800 30px/1 var(--sans);color:var(--coral)}
 .cs-svc h3{font-size:21px;margin:14px 0 8px;font-weight:800;letter-spacing:-.03em}
 .cs-svc p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
 .cs-svc strong{color:var(--ink)}
@@ -732,14 +732,14 @@ mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit
 .pk-facts li{background:none!important;padding:0!important;border-radius:0!important;color:var(--muted)!important;font-size:13.5px!important}
 .pk-facts li+li::before{content:"·";margin:0 7px;color:#b9b2a2}
 .pk-tag{color:var(--coral)!important}
-.pk-price b,.pk-price strong{font-family:var(--num);font-weight:800;color:var(--forest);letter-spacing:-.02em}
+.pk-price b,.pk-price strong{font-family:var(--sans);font-weight:800;color:var(--forest);letter-spacing:-.02em}
 .pk-ask,.button-dark{background:var(--forest)!important;color:#fff!important;border-radius:999px!important;border:0!important}
 .pk-ask:hover,.button-dark:hover{background:var(--coral)!important}
 .button-lime,.button.button-lime{background:var(--coral)!important;color:#fff!important;border-color:var(--coral)!important;border-radius:999px}
 .button-outline,.btn-outline{border-color:var(--ink)!important;color:var(--ink)!important;border-radius:999px!important}
 .discovery-tabs [role=tab],.discovery-tabs button{border-radius:999px}
 .discovery-tabs [aria-selected=true]{background:var(--forest)!important;color:#fff!important}
-.villa-price b,.villa-price strong{font-family:var(--num);font-weight:800;color:var(--forest)}
+.villa-price b,.villa-price strong{font-family:var(--sans);font-weight:800;color:var(--forest)}
 .course-card strong,.villa-card h3{font-weight:800;letter-spacing:-.03em}
 .consult-card{border-radius:28px!important;border:0!important}
 .c-chip input:checked+span{background:var(--forest)!important;color:#fff!important;border-color:var(--forest)!important}
@@ -751,7 +751,7 @@ details summary{cursor:pointer}
 .cs-promise{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:40px 0 56px}
 .cs-promise div{padding:26px 22px 26px 0}
 .cs-promise div+div{padding-left:22px;border-left:1px solid var(--line)}
-.cs-promise b{display:block;font:800 40px/1.1 var(--num);color:var(--forest)}
+.cs-promise b{display:block;font:800 40px/1.1 var(--sans);color:var(--forest)}
 .cs-promise span{color:var(--muted);font-size:15px}
 .cs-end{background:var(--coral);color:#fff;border-radius:32px;padding:60px 64px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
 .cs-end h2{color:#fff;margin:0;font-size:clamp(28px,3.4vw,44px)}.cs-end p{margin:10px 0 0;opacity:.92}
@@ -786,4 +786,8 @@ footer .brand [data-brand-english]{font-family:var(--num);text-transform:none}
 /* 11/5 Evan: '이 숙소로 문의' 글자가 왼쪽 아래로 쏠림 → 예전 줄 버튼(위 줄·왼쪽 정렬) 스타일을 지우고 가운데 정렬 알약 버튼으로 */
 .villa-card-body .villa-request{justify-content:center;gap:6px;text-align:center;padding:0 16px;border:1px solid var(--ink);margin-top:auto;min-height:46px;font-weight:600}
 .villa-card-body .villa-request:hover{background:var(--ink);color:var(--cream)!important}
+/* 11/5 Evan "글씨체가 이상한 부분" → 장식 글꼴(Fraunces)은 로고 CLARKSIDE·C만. 가격·번호·숫자 띠·로고 아래 작은 글씨는 본문 글꼴로 */
+.cs-badge b,.cs-svc .n,.pk-price b,.pk-price strong,.villa-price b,.villa-price strong,.cs-promise b{font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.brand small,.cs-logo small,footer .brand small{font-family:var(--sans)!important}
+footer .brand small{letter-spacing:0!important;text-transform:none!important;font-size:12px!important}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">객실 배정 · B02</p><h1>클락 풀빌라 방 배정, 인원별 침실·침대 구성 확인법</h1><p>클락 풀빌라는 침실 수와 침대 수가 다릅니다. 6명·8명 일행이라면 동실·침대 공유·독실 희망부터 맞춰보세요.</p><h2 style="font-size:19px;margin:30px 0 12px">잠자리 조건부터 묻기</h2><p>같은 방을 쓰는 것과 같은 침대를 쓰는 것은 다른 조건입니다. 각자 침대가 필요한지, 독실을 원하는지, 함께 방을 써도 되는 상대가 누구인지 먼저 확인하세요. 가족이나 커플이어도 침대 공유를 자동으로 전제하지 않으면 예약 직전에 구성을 바꾸는 일을 줄일 수 있습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">인원과 침대 구성을 같이 보기</h2><p>성인 6명이 2인실 3개를 쓴다는 계획은 객실마다 어떤 침대가 있는지에 따라 달라집니다. 1인용 침대 2개인지 큰 침대 1개인지 구분하세요. 소파나 추가 침구를 잠자리로 계산하려면 실제 이용 가능 여부와 정원, 추가 비용에 대한 숙소의 답변이 필요합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">독실이 생기면 다시 배정하기</h2><p>독실 희망자가 생기면 남은 사람의 방도 다시 나눠야 합니다. 기존 객실 수를 유지하려고 3인 이용을 임의로 넣지 말고 허용 정원과 침대 구성을 확인하세요. 개인 희망에 따른 객실 추가분을 누가 부담할지도 일행끼리 정하면 총무가 견적을 설명하기 쉬워집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">일행 합의와 숙소 확정 구분하기</h2><p>배정표에는 객실, 이용자, 침대 유형과 확인 상태를 함께 적으세요. 풀빌라는 침실별 침대와 욕실 위치, 계단도 살펴보면 좋습니다. 일행이 원하는 배정이 정해져도 숙소가 제공할 수 있는지는 별도 확인입니다. 이름 대신 A·B로 시작해도 충분합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">함께 보면 좋은 클락사이드 블로그 글</h2><ul><li><a href="https://blog.naver.com/clarksideph/224449190096" target="_blank" rel="noopener">클락 6인 풀빌라, 각방 배정은 침실 수부터 ↗</a></li><li><a href="https://blog.naver.com/clarksideph/224450932444" target="_blank" rel="noopener">클락 풀빌라 코코밸리, 8~12명 단체 숙소 요금 ↗</a></li></ul><p style="margin-top:24px"><a class="button button-dark" href="https://pf.kakao.com/_YxcNmX/chat" target="_blank" rel="noopener" data-place="guide-kakao">카카오톡 채널로 바로 상담하기 ↗</a></p><p><a href="../index.html#inquiry=B02">이 글의 조건으로 문의 내용 정리하기 ↗</a></p></article><a class="guide-back" href="../index.html#plan=B02">우리 일행 객실 배정해보기 ↗</a></main></body></html>
