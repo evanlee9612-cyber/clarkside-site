@@ -635,4 +635,152 @@ footer .footer-cta.kakao-button{width:auto;min-height:54px;padding:0 26px;font-s
 .gf-table td.gf-extra{color:var(--muted);font-weight:600}
 .gf-notes{margin:10px 0 0;padding-left:18px;font-size:13.5px;color:#56635a;line-height:1.7}
 @media(max-width:600px){.gf-table th,.gf-table td{padding:10px 6px}.gf-table td b{font-size:15px}.gf-table tbody th{font-size:14px}.gf-table td.gf-extra{font-size:13px}}
+
+/* 2026-11-05 리디자인 v2 — Evan "그냥 적용해"(시안 v2: media/site_redesign_2026-11-05/v2/index.html)
+   디자인 사이트(design.clarksideph.com) 방식 + 북미 레퍼런스(PerryGolf·Wander·Butterfield & Robinson·AvantStay):
+   아주 굵은 한글 제목 + 형광펜 1단어, 큰 둥근 실사진 + 동그란 배지, 진한 숲색 띠·블록, 포인트 코랄 1색, 크림 바탕.
+   다른 CSS 맨 뒤에 붙어 덮어쓴다. 되돌리기: build.mjs에서 redesign.css 줄 삭제 + src/index.html.bak_2026-11-05 */
+:root{--cream:#fbf6ec;--paper:#fff;--forest:#0f3a2e;--forest-deep:#0b2d23;--forest-2:#16493a;--ink:#14231d;--muted:#5b6862;--line:#e9e1d1;
+  --coral:#ff6b42;--coral-d:#e85529;--butter:#ffdc7a;--sage:#dfe9d6;--lime:#ffdc7a;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;--num:"Fraunces",Georgia,serif}
+html{scroll-padding-top:84px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);letter-spacing:-.015em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+h1,h2,h3{word-break:keep-all}
+h2,.section h2,.section-top h2{font-family:var(--sans);font-weight:800;letter-spacing:-.035em;color:var(--ink);line-height:1.2}
+.eyebrow{color:var(--coral)!important;font-weight:700;letter-spacing:.02em;font-family:var(--sans)}
+mark{background:linear-gradient(transparent 58%,var(--butter) 58%);color:inherit;padding:0 .06em}
+.cs-w{max-width:1200px;margin:0 auto;padding:0 max(20px,4vw)}
+.cs-kicker{font-size:14px;font-weight:700;color:var(--coral);letter-spacing:.02em;margin:0 0 14px}
+.cs-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid transparent;white-space:nowrap;text-decoration:none;transition:background .2s,color .2s}
+.cs-btn-coral{background:var(--coral);color:#fff}.cs-btn-coral:hover{background:var(--coral-d)}
+.cs-btn-line{border-color:var(--ink);color:var(--ink)}.cs-btn-line:hover{background:var(--ink);color:#fff}
+
+/* 머리글 */
+.concept-bar{display:none}
+.site-header{background:#fbf6ecf0!important;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:none}
+.cs-logo{display:flex;align-items:center;gap:10px;color:var(--forest)}
+.cs-logo i{width:36px;height:36px;border-radius:50%;background:var(--forest);display:grid;place-items:center;color:var(--butter);font:800 20px/1 var(--num);font-style:normal;flex:none}
+.cs-logo [data-brand-english]{font:800 22px/1 var(--num)!important;letter-spacing:-.01em!important;color:var(--forest);text-transform:none}
+.cs-logo small{display:block;font-size:11px!important;font-weight:700;color:var(--coral)!important;letter-spacing:.04em!important;margin-top:3px;text-transform:none}
+.site-header nav a{color:var(--ink);font-weight:600}
+.site-header nav a:hover,.site-header nav a.active{color:var(--coral)}
+.header-kakao{background:var(--coral)!important;color:#fff!important;border-radius:999px!important;border:0!important}
+.header-kakao svg{fill:#fff}
+.header-kakao:hover{background:var(--coral-d)!important}
+
+/* 첫 화면 */
+.hero.cs-hero{display:block;position:relative;min-height:0;max-height:none;height:auto;background:var(--cream);color:var(--ink);padding:60px 0 0;overflow:visible}
+.cs-hero h1{margin:0;font-family:var(--sans);font-weight:800;font-size:clamp(38px,5.6vw,74px);line-height:1.16;letter-spacing:-.04em;color:var(--ink);text-shadow:none}
+.cs-sub{font-size:clamp(16px,1.5vw,19px);color:var(--muted);margin:22px 0 30px;max-width:40em;line-height:1.65}
+.cs-sub b{color:var(--ink)}
+.cs-acts{display:flex;gap:12px;flex-wrap:wrap}
+.cs-shot{position:relative;margin-top:44px;border-radius:28px;overflow:hidden;aspect-ratio:21/9;background:var(--sage)}
+.cs-shot img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.cs-badge{position:absolute;right:36px;top:36px;width:158px;height:158px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 14px 34px #0f3a2e40}
+.cs-badge b{font:800 33px/1 var(--num);letter-spacing:-.02em}.cs-badge span{font-size:13px;font-weight:700;margin-top:6px}
+.cs-tags{position:absolute;left:24px;bottom:24px;display:flex;gap:8px;flex-wrap:wrap}
+.cs-tags span{background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;color:var(--ink)}
+.cs-cap{position:absolute;right:20px;bottom:18px;color:#fff;font-size:12px;opacity:.9;text-shadow:0 1px 4px #0008}
+
+/* 흐르는 띠 */
+.cs-band{background:var(--forest);color:#fff;margin-top:56px;overflow:hidden;white-space:nowrap}
+.cs-band>div{display:inline-flex;gap:34px;padding:20px 0;font-size:20px;font-weight:700;animation:cs-slide 45s linear infinite}
+.cs-band em{color:var(--butter);font-style:normal}
+@keyframes cs-slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.cs-band>div{animation:none}}
+
+/* 6가지 */
+.cs-sec{padding:96px 0}
+.cs-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px;flex-wrap:wrap}
+.cs-head h2{margin:0;font-size:clamp(30px,3.6vw,46px)}
+.cs-head>p{margin:0;color:var(--muted);max-width:30em}
+.cs-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cs-svc a{display:block;background:var(--paper);border-radius:22px;padding:28px 28px 26px;border-top:5px solid var(--coral);color:inherit;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.cs-svc a:hover{transform:translateY(-3px);box-shadow:0 18px 40px #0f3a2e14}
+.cs-svc .n{font:800 30px/1 var(--num);color:var(--coral)}
+.cs-svc h3{font-size:21px;margin:14px 0 8px;font-weight:800;letter-spacing:-.03em}
+.cs-svc p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+.cs-svc strong{color:var(--ink)}
+
+/* 견적 블록 */
+#quick-quote{margin-bottom:24px}
+.cs-demo{background:var(--forest);color:#fff;border-radius:32px;padding:64px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;overflow:hidden}
+.cs-demo .cs-kicker{color:var(--butter)}
+.cs-demo h2{color:#fff;margin:0;font-size:clamp(30px,3.6vw,46px)}.cs-demo h2 em{font-style:normal;color:var(--butter)}
+.cs-demo-p{color:#cfe0d6;margin:16px 0 28px;line-height:1.65}
+.cs-qb{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;background:#fff;border-radius:18px;overflow:hidden;color:var(--ink)}
+.cs-qb label{display:grid;gap:2px;padding:14px 16px;border-right:1px solid var(--line);cursor:pointer;min-width:0}
+.cs-qb label:nth-child(4){border-right:0}
+.cs-qb span{font-size:12px;font-weight:700;color:var(--muted)}
+.cs-qb select,.cs-qb input{border:0;background:none;font:700 17px var(--sans);color:var(--ink);padding:0;appearance:none;-webkit-appearance:none;outline:none;width:100%;min-width:0;min-height:26px}
+.cs-qb button{grid-column:1/-1;height:58px;border:0;background:var(--coral);color:#fff;font:800 17px var(--sans);cursor:pointer}
+.cs-qb button:hover{background:var(--coral-d)}
+.cs-demo small{display:block;color:#a9c3b6;margin-top:12px;font-size:13px}
+.cs-phone{justify-self:center;width:290px;border-radius:38px;background:#0a1f19;padding:12px;box-shadow:0 30px 60px #0007;transform:rotate(4deg);margin:-20px 0}
+.cs-phone>div{border-radius:28px;overflow:hidden;height:560px;background:#fff}
+.cs-phone img{width:100%;height:auto;display:block}
+
+/* 아래 기존 섹션들: 같은 말투로 */
+.section-top h2{font-size:clamp(30px,3.6vw,46px)}
+.section-description{color:var(--muted)}
+.pk-card,.villa-card,.course-card,.journal-card,.vehicle-card,.review-card{background:var(--paper);border:0!important;border-radius:22px!important;box-shadow:none;overflow:hidden}
+.pk-card:hover,.villa-card:hover,.course-card:hover,.journal-card:hover{transform:translateY(-4px);box-shadow:0 22px 44px #0f3a2e1c}
+.pk-photo{aspect-ratio:4/3.2;background:var(--sage)}
+.pk-code{background:#fff!important;color:var(--ink)!important;font-weight:800;border-radius:999px}
+.pk-card h3{font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.pk-facts{gap:0!important}
+.pk-facts li{background:none!important;padding:0!important;border-radius:0!important;color:var(--muted)!important;font-size:13.5px!important}
+.pk-facts li+li::before{content:"·";margin:0 7px;color:#b9b2a2}
+.pk-tag{color:var(--coral)!important}
+.pk-price b,.pk-price strong{font-family:var(--num);font-weight:800;color:var(--forest);letter-spacing:-.02em}
+.pk-ask,.button-dark{background:var(--forest)!important;color:#fff!important;border-radius:999px!important;border:0!important}
+.pk-ask:hover,.button-dark:hover{background:var(--coral)!important}
+.button-lime,.button.button-lime{background:var(--coral)!important;color:#fff!important;border-color:var(--coral)!important;border-radius:999px}
+.button-outline,.btn-outline{border-color:var(--ink)!important;color:var(--ink)!important;border-radius:999px!important}
+.discovery-tabs [role=tab],.discovery-tabs button{border-radius:999px}
+.discovery-tabs [aria-selected=true]{background:var(--forest)!important;color:#fff!important}
+.villa-price b,.villa-price strong{font-family:var(--num);font-weight:800;color:var(--forest)}
+.course-card strong,.villa-card h3{font-weight:800;letter-spacing:-.03em}
+.consult-card{border-radius:28px!important;border:0!important}
+.c-chip input:checked+span{background:var(--forest)!important;color:#fff!important;border-color:var(--forest)!important}
+details summary{cursor:pointer}
+.faq-list details{border-color:var(--line)!important}
+
+/* 숫자 띠 + 마무리 */
+.cs-final{padding-bottom:40px}
+.cs-promise{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin:40px 0 56px}
+.cs-promise div{padding:26px 22px 26px 0}
+.cs-promise div+div{padding-left:22px;border-left:1px solid var(--line)}
+.cs-promise b{display:block;font:800 40px/1.1 var(--num);color:var(--forest)}
+.cs-promise span{color:var(--muted);font-size:15px}
+.cs-end{background:var(--coral);color:#fff;border-radius:32px;padding:60px 64px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.cs-end h2{color:#fff;margin:0;font-size:clamp(28px,3.4vw,44px)}.cs-end p{margin:10px 0 0;opacity:.92}
+.cs-end .cs-btn{background:#fff;color:var(--ink);height:58px;padding:0 32px;font-size:17px}
+footer{background:var(--forest-deep)!important;color:#d9e5de}
+footer .brand [data-brand-english]{font-family:var(--num);text-transform:none}
+.kakao-button.footer-cta{background:var(--coral)!important;color:#fff!important}
+.kakao-button.footer-cta svg{fill:#fff}
+
+/* 휴대폰 */
+@media(max-width:900px){
+  .hero.cs-hero{padding-top:30px}
+  .cs-hero h1{font-size:clamp(32px,8.6vw,44px)}
+  .cs-sub{font-size:15.5px;margin:16px 0 22px}
+  .cs-btn{height:48px;padding:0 20px;font-size:15px}
+  .cs-shot{aspect-ratio:4/3.4;border-radius:22px;margin-top:28px}
+  .cs-badge{width:112px;height:112px;right:14px;top:14px}.cs-badge b{font-size:24px}.cs-badge span{font-size:11px}
+  .cs-tags{left:12px;bottom:12px}.cs-tags span{font-size:12.5px;padding:5px 11px}
+  .cs-cap{display:none}
+  .cs-band{margin-top:34px}.cs-band>div{font-size:16px;padding:15px 0;gap:24px}
+  .cs-sec{padding:64px 0}
+  .cs-svc{grid-template-columns:1fr 1fr;gap:10px}
+  .cs-svc a{padding:16px 14px;border-radius:16px;border-top-width:4px}.cs-svc .n{font-size:22px}.cs-svc h3{font-size:17px;margin:8px 0 4px}.cs-svc p{font-size:13.5px;line-height:1.55}
+  .cs-demo{grid-template-columns:1fr;padding:36px 22px;border-radius:24px;gap:30px}
+  .cs-qb{grid-template-columns:1fr 1fr}.cs-qb label:nth-child(2){border-right:0}.cs-qb label:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cs-qb select,.cs-qb input{font-size:16px}
+  .cs-phone{width:230px;transform:rotate(3deg);margin:0 auto}.cs-phone>div{height:420px}
+  .cs-promise{grid-template-columns:1fr 1fr;margin:24px 0 36px}.cs-promise div{padding:18px 10px 18px 0}.cs-promise div:nth-child(3){border-left:0;padding-left:0}.cs-promise div:nth-child(n+3){border-top:1px solid var(--line)}
+  .cs-promise b{font-size:30px}.cs-promise span{font-size:13.5px}
+  .cs-end{padding:38px 24px;border-radius:24px}.cs-end .cs-btn{width:100%}
+}
 </style></head><body><main class="guide-page"><a class="brand" href="../index.html">CLARKSIDE<small>CLARK TRAVEL JOURNAL</small></a><article class="guide-article"><p class="eyebrow">단체여행 총무 · B13</p><h1>클락 단체 골프여행 총무, 1인 정산·공유 견적 정리법</h1><p>클락 단체 골프여행은 팀 총액, 개인별 선택, 객실 배정을 같은 기준으로 정리하면 일행과의 의사결정이 쉬워집니다.</p><h2 style="font-size:19px;margin:30px 0 12px">첫 화면은 여행 조건과 총액</h2><p>여행 날짜, 전체 인원, 객실 구성, 골프 참여 인원과 작성일을 먼저 적으세요. 그 아래에 예약대금, 현지 별도 비용과 아직 확인하지 못한 항목을 나눠 표시합니다. 포함 범위를 읽을 수 있어야 일행도 단순한 1인 가격보다 무엇에 돈을 쓰는지 이해하기 쉽습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">공동비와 개인 선택을 나누기</h2><p>숙소나 공동 차량은 일행이 합의한 기준으로 나누고, 개인 골프나 추가 서비스는 이용자에게 배정하세요. 일부만 골프를 친다면 그 비용을 전원에게 같은 비율로 나누기 전에 합의가 필요합니다. 독실이나 숙박 기간 차이가 있을 때도 개인 추가분을 따로 적으면 정산이 편합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">객실 배정은 확인 상태까지</h2><p>방별 이용자와 침대 구성을 함께 적고, 일행 협의 중인 배정과 숙소에서 확인한 구성을 구분하세요. 정원에 맞아도 잠자리 방식이 다를 수 있습니다. 넓게 공유하는 문서에는 불필요한 연락처나 계좌번호를 빼고, 이름 대신 별칭을 사용해도 충분합니다.</p><h2 style="font-size:19px;margin:30px 0 12px">바뀐 조건은 같은 문서에 남기기</h2><p>인원이나 날짜, 골프 일정이 바뀌면 변경일과 이유를 남기세요. 받은 돈, 여행사에 전달한 돈과 남은 납부액도 구분해 기록합니다. 견적 공유는 예약 확정과 다르므로 최종 조건과 결제 안내를 확인한 뒤 일행에게 알려주세요. 최신본의 제목과 작성일도 맞춰두면 좋습니다.</p><h2 style="font-size:19px;margin:30px 0 12px">함께 보면 좋은 클락사이드 블로그 글</h2><ul><li><a href="https://blog.naver.com/clarksideph/224449188636" target="_blank" rel="noopener">클락 골프 4인 총비용, 3박·54홀 견적 비교 ↗</a></li><li><a href="https://blog.naver.com/clarksideph/224450941381" target="_blank" rel="noopener">클락 풀빌라 가격 비교, 엠타운 골드 4룸 ↗</a></li></ul><p style="margin-top:24px"><a class="button button-dark" href="https://pf.kakao.com/_YxcNmX/chat" target="_blank" rel="noopener" data-place="guide-kakao">카카오톡 채널로 바로 상담하기 ↗</a></p><p><a href="../index.html#inquiry=B13">이 글의 조건으로 문의 내용 정리하기 ↗</a></p></article><a class="guide-back" href="../index.html#plan=B13">총무용 공유 견적 만들기 ↗</a></main></body></html>
