@@ -1894,7 +1894,7 @@ const TRAVEL_GUIDES = [
   }
   function closeGuide(){if(typeof $('guide-dialog').close==='function')$('guide-dialog').close();else $('guide-dialog').removeAttribute('open');}
   function setupOperations(){
-    document.title=`${siteConfig.brandName} — 클락 골프·풀빌라 1인 총액 견적`;
+    if(!String(document.title||'').trim())document.title=`${siteConfig.brandName} — 클락 골프·풀빌라 1인 총액 견적`; // 11/17: HTML의 검색용 제목을 덮어쓰지 않음
     all('[data-brand-english]').forEach(element=>element.textContent=siteConfig.brandEnglish);
     all('[data-contact-owner]').forEach(element=>element.textContent=siteConfig.contactOwner);
     all('[data-inquiry]').forEach(element=>{if(element.classList.contains('request-link'))element.textContent='이 조건으로 카카오톡 채널에 문의 ↗';});
